@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agenova | AI 产品、流程自动化与定制软件</title>
+<meta name="description" content="Agenova 用一支 AI 员工队伍，为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流：AI 产品与 MVP、业务流程自动化、定制软件与内部工具。所有交付都经人工审核，责任到人。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://agenova.ai/">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23000000%22/%3E%3Crect%20x%3D%2214.5%22%20y%3D%223.2%22%20width%3D%227%22%20height%3D%226.8%22%20rx%3D%222.4%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2214.5%22%20y%3D%2212.6%22%20width%3D%227%22%20height%3D%226.8%22%20rx%3D%222.4%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.55%22/%3E%3Crect%20x%3D%2214.5%22%20y%3D%2222%22%20width%3D%227%22%20height%3D%226.8%22%20rx%3D%222.4%22%20fill%3D%22%23ffffff%22%20opacity%3D%22.28%22/%3E%3C/svg%3E">
+
+<!-- Open Graph / Twitter (og:image 占位:上线前替换为黑底品牌图) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agenova">
+<meta property="og:url" content="https://agenova.ai/">
+<meta property="og:locale" id="og-locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" id="og-title" content="Agenova | AI 产品、流程自动化与定制软件">
+<meta property="og:description" id="og-desc" content="Agenova 用一支 AI 员工队伍，为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。人工审核，责任到人。">
+<meta property="og:image" content="https://agenova.ai/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agenova | AI 产品、流程自动化与定制软件">
+<meta name="twitter:description" content="Agenova 用一支 AI 员工队伍，为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。人工审核，责任到人。">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"Organization","@id":"https://agenova.ai/#org","name":"Agenova","url":"https://agenova.ai","email":"hello@agenova.ai","description":"Agenova designs, builds, and ships AI-powered software and workflows with human-reviewed delivery."},
+  {"@type":"ProfessionalService","@id":"https://agenova.ai/#service","name":"Agenova","url":"https://agenova.ai","email":"hello@agenova.ai","parentOrganization":{"@id":"https://agenova.ai/#org"},"description":"Agenova ships AI-powered software and workflows for teams with real business problems: AI products & MVPs, workflow automation, and custom software & internal tools."}
+]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Agenova.ai — single-file long-scroll site
+   Design tokens (unchanged visual language)
+   ============================================================ */
+:root{
+  color-scheme:dark;
+
+  --bg:#000000;
+  --fg:#ffffff;
+  --muted:#9a9a9a;
+
+  --text-2:rgba(255,255,255,.72);
+  --text-3:rgba(255,255,255,.55);
+  --line:rgba(255,255,255,.1);
+  --line-soft:rgba(255,255,255,.065);
+
+  --ease:cubic-bezier(.16,1,.3,1);
+  --font-sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --font-serif:"Instrument Serif","Songti SC","STSong","Noto Serif SC",Georgia,"Times New Roman",serif;
+
+  --pad:40px;
+  --head-fs:clamp(2.375rem,calc(.55rem + 4.2vw),7.25rem);
+  --h2-fs:clamp(2.1rem,calc(1.2rem + 2.1vw),4.1rem);
+  --h3-fs:clamp(1.05rem,calc(.8rem + .55vw),1.45rem);
+}
+@media (min-width:901px) and (max-width:1279px){ :root{ --pad:40px } }
+@media (min-width:1280px) and (max-width:1599px){ :root{ --pad:56px } }
+@media (min-width:1600px) and (max-width:1919px){ :root{ --pad:72px } }
+@media (min-width:1920px) and (max-width:2559px){ :root{ --pad:104px } }
+@media (min-width:2560px){ :root{ --pad:136px } }
+@media (max-width:900px){ :root{ --pad:28px } }
+@media (max-width:560px){ :root{ --pad:18px } }
+
+/* Reset / base */
+*,*::before,*::after{ box-sizing:border-box }
+html,body{ margin:0 }
+html{ background:#000; scroll-behavior:auto }
+@media (prefers-reduced-motion:no-preference){ html{ scroll-behavior:smooth } }
+body{
+  font-family:var(--font-sans);
+  background:var(--bg);
+  color:var(--fg);
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+@supports (min-height:100dvh){ body{ min-height:100dvh } }
+img,svg{ display:block }
+ul,ol{ margin:0; padding:0; list-style:none }
+a{ color:inherit }
+button{ font-family:inherit; color:inherit; background:none; border:0; cursor:pointer }
+::selection{ background:#fff; color:#000 }
+:focus-visible{ outline:2px solid rgba(255,255,255,.85); outline-offset:3px; border-radius:6px }
+.wrap{ padding-inline:var(--pad) }
+section[id]{ scroll-margin-top:96px }
+h1,h2,h3{ text-wrap:balance }
+em{ font-style:normal } /* body emphasis stays in the sans face (color accents below); serif-italic is reserved for .display em in the hero */
+h2,h3{ letter-spacing:-.02em }
+
+/* ============================================================
+   Entrance system (first screen) — resting state fully visible.
+   Gated behind html.js; JS appends .is-in as fail-safe.
+   ============================================================ */
+[data-rv],.mask-in{ opacity:1 }
+html.js [data-rv]{ animation:rise var(--dur,.9s) var(--ease) both; animation-delay:var(--d,0s) }
+html.js .mask-in{ animation:mask-in 1.06s var(--ease) both; animation-delay:var(--d,0s) }
+[data-rv].is-in{ animation:none; opacity:1; transform:none }
+.mask-in.is-in{ animation:none; transform:none }
+.d0{ --d:.02s } .d1{ --d:.14s } .d2{ --d:.26s } .d3{ --d:.38s }
+.d4{ --d:.54s } .d5{ --d:.70s } .d6{ --d:.86s } .d7{ --d:.98s } .d8{ --d:1.10s }
+@keyframes rise{ from{ opacity:0; transform:translate3d(0,26px,0) } to{ opacity:1; transform:none } }
+@keyframes mask-in{ from{ transform:translate3d(0,124%,0) } to{ transform:none } }
+
+/* ============================================================
+   Scroll reveal — below-fold sections. Only opacity/transform.
+   ============================================================ */
+html.js .reveal{
+  opacity:0;
+  transform:translate3d(0,26px,0);
+  transition:opacity .9s var(--ease),transform .9s var(--ease);
+  transition-delay:var(--d,0s);
+  will-change:opacity,transform;
+}
+html.js .reveal.is-in{ opacity:1; transform:none }
+
+/* ============================================================
+   Header — sticky 3-col: brand / nav / actions
+   ============================================================ */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:#000;
+  padding-top:env(safe-area-inset-top);
+  transition:box-shadow .4s ease;
+}
+body.is-scrolled .site-header{ box-shadow:0 1px 0 var(--line) }
+.header-in{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  min-height:76px;
+}
+.brand{ display:inline-flex; align-items:center; gap:11px; text-decoration:none; justify-self:start }
+.brand-mark{ width:26px; height:26px; flex:none }
+.wm{ font-size:19px; font-weight:600; letter-spacing:-.03em; line-height:1 }
+.wm-ai{ font-weight:400; color:var(--muted) }
+
+.nav{ justify-self:center }
+.nav-list{ display:flex; align-items:center; gap:clamp(22px,2.6vw,42px) }
+.nav-list a{
+  display:inline-block; position:relative;
+  color:var(--text-3); font-size:14px; font-weight:500; letter-spacing:-.01em;
+  text-decoration:none; padding:10px 2px; transition:color .3s ease;
+}
+.nav-list a::after{
+  content:""; position:absolute; left:2px; right:2px; bottom:5px; height:1px;
+  background:rgba(255,255,255,.45); transform:scaleX(0); transform-origin:center;
+  transition:transform .45s var(--ease);
+}
+.nav-list a:hover{ color:var(--fg) }
+.nav-list a:hover::after{ transform:scaleX(1) }
+.nav-list .nav-cta{ display:none }
+
+.header-actions{ justify-self:end; display:flex; align-items:center; gap:14px }
+.menu-lang{ display:none }
+.nav-toggle{ display:none }
+.nav-toggle svg{ display:none }
+.nav-toggle svg:first-child{ display:block }
+body.menu-open .nav-toggle svg:first-child{ display:none }
+body.menu-open .nav-toggle svg:last-child{ display:block }
+
+/* Language switch — text pill */
+.lang-switch{
+  display:inline-flex; align-items:center; gap:2px;
+  padding:3px; border:1px solid var(--line-soft); border-radius:999px;
+  background:rgba(255,255,255,.04);
+}
+.lang-btn{
+  padding:4px 11px; border-radius:999px; font-size:12.5px; font-weight:600;
+  letter-spacing:.03em; color:var(--text-3); transition:color .3s,background .3s;
+}
+.lang-btn:hover{ color:rgba(255,255,255,.85) }
+.lang-btn.is-active{ background:#fff; color:#000 }
+.lang-switch[data-place="menu"]{ border-color:var(--line) }
+
+/* ============================================================
+   Buttons — liquid metal
+   ============================================================ */
+.btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  overflow:hidden; isolation:isolate; text-decoration:none; border:0; border-radius:999px;
+  user-select:none; letter-spacing:-.01em; -webkit-tap-highlight-color:transparent;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .3s ease,background .3s ease;
+}
+.btn--lg{ height:56px; padding:0 34px; font-size:16.5px; font-weight:500; gap:10px }
+.btn--sm{ height:38px; padding:0 21px; font-size:13px; font-weight:600; gap:8px }
+.btn--solid{ color:#0a0a0c; background:linear-gradient(180deg,#ffffff 0%,#f4f4f5 52%,#e3e4e6 100%) }
+.btn--solid::before{
+  content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,0) 56%); opacity:.55;
+}
+.btn--ghost{
+  color:#fff; border:1px solid rgba(255,255,255,.16);
+  background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.025));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+}
+.btn::after{
+  content:""; position:absolute; top:0; bottom:0; left:0; width:42%; z-index:2; pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.38) 50%,transparent);
+  transform:translateX(-150%) skewX(-18deg);
+}
+.btn--solid::after{ background:linear-gradient(100deg,transparent,rgba(255,255,255,.95) 46%,transparent) }
+.btn--sm::after{ background:none }
+@media (hover:hover){
+  .btn--solid:hover{ transform:translateY(-1.5px); box-shadow:0 0 0 1px rgba(255,255,255,.28),0 22px 44px -22px rgba(255,255,255,.55) }
+  .btn--ghost:hover{
+    transform:translateY(-1.5px); border-color:rgba(255,255,255,.34);
+    background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.05));
+    box-shadow:0 16px 36px -22px rgba(255,255,255,.4);
+  }
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){ .btn:hover::after{ animation:shine .95s var(--ease) } }
+@keyframes shine{ to{ transform:translateX(360%) skewX(-18deg) } }
+
+/* ============================================================
+   Hero — near-first-viewport, bottom aligned
+   ============================================================ */
+.hero{
+  min-height:calc(100svh - 76px);
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.hero-in{ width:100%; text-align:center; padding-bottom:clamp(22px,4vh,46px) }
+.badge{
+  display:inline-flex; align-items:center; gap:9px; padding:8px 16px;
+  border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.045);
+  color:rgba(255,255,255,.82); font-size:13px; font-weight:500; letter-spacing:.02em;
+  margin-bottom:clamp(20px,3.2vh,28px);
+}
+.badge-dot{ position:relative; display:inline-block; width:6px; height:6px; border-radius:50%; background:#fff }
+.badge-dot::after{
+  content:""; position:absolute; inset:-3px; border-radius:50%; border:1px solid rgba(255,255,255,.55);
+}
+@media (prefers-reduced-motion:no-preference){ .badge-dot::after{ animation:pulse 2.4s var(--ease) infinite } }
+@keyframes pulse{ 0%{ transform:scale(.55); opacity:.9 } 70%,100%{ transform:scale(1.55); opacity:0 } }
+
+.display{
+  margin:0; font-size:var(--head-fs); font-weight:600; letter-spacing:-.045em; line-height:1.02;
+}
+.mask{ display:block; overflow:hidden; padding:.1em 0 .16em; margin:-.05em 0 }
+.mask-in{ display:block; will-change:transform }
+.display em{ color:var(--muted); font-family:var(--font-serif); font-style:italic; font-weight:400; letter-spacing:-.01em }
+
+.lede{
+  margin:clamp(18px,3.4vh,26px) auto 0; max-width:62ch; color:var(--muted);
+  font-size:17px; line-height:1.62; letter-spacing:-.01em; text-wrap:pretty;
+}
+.cta-row{ display:flex; align-items:center; justify-content:center; gap:14px; margin-top:clamp(26px,4.2vh,36px) }
+
+/* ============================================================
+   Delivery principles — hairline strip under the hero
+   ============================================================ */
+.strip{
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line-soft);
+  background:rgba(255,255,255,.012);
+}
+.strip-grid{ display:grid; grid-template-columns:repeat(3,1fr); padding-block:clamp(14px,2.6vh,24px) }
+.stat{
+  display:flex; align-items:center; justify-content:center; gap:12px; min-width:0;
+  color:rgba(255,255,255,.8); font-size:14.5px; line-height:1.4; padding-inline:20px; text-align:left;
+}
+.stat + .stat{ border-left:1px solid var(--line-soft) }
+.stat svg{ flex:none }
+
+/* ============================================================
+   Generic sections
+   ============================================================ */
+.sec{ border-top:1px solid var(--line-soft) }
+.sec-pad{ padding-block:clamp(88px,11vh,150px) }
+.sec-inner{ width:min(100%,1180px); margin-inline:auto }
+.sec-head{ max-width:640px }
+.sec-title{ margin:0; font-size:var(--h2-fs); line-height:1.12; font-weight:600 }
+.sec-title em{ color:var(--muted) }
+.sec-lede{ margin:22px 0 0; max-width:56ch; color:var(--muted); font-size:16.5px; line-height:1.7 }
+.stmt{
+  margin:0; text-align:center; font-size:clamp(1.55rem,calc(1rem + 1.3vw),2.5rem);
+  font-weight:500; line-height:1.35; letter-spacing:-.02em;
+}
+.stmt em{ color:var(--muted) }
+
+/* Services — numbered list */
+.svc-list{ margin-top:clamp(56px,8vh,90px) }
+.svc{ display:grid; grid-template-columns:64px 1fr; gap:clamp(18px,3vw,44px); padding:clamp(30px,4.5vh,52px) 0; border-top:1px solid var(--line-soft) }
+.svc:last-child{ border-bottom:1px solid var(--line-soft) }
+.svc-no{ font-size:14px; font-weight:600; color:var(--text-3); padding-top:8px; font-variant-numeric:tabular-nums }
+.svc-title{ margin:0 0 14px; font-size:var(--h3-fs); font-weight:600; letter-spacing:-.02em }
+.svc-desc{ margin:0 0 30px; max-width:62ch; color:var(--text-2); font-size:16px; line-height:1.7 }
+.svc-meta{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin:0; border-top:1px solid var(--line-soft); padding-top:26px }
+.svc-meta dt{ font-size:11.5px; font-weight:600; letter-spacing:.14em; color:var(--text-3); text-transform:uppercase; margin-bottom:10px }
+.svc-meta dd{ margin:0; color:var(--text-2); font-size:14.5px; line-height:1.65 }
+.services-stmt{ margin-top:clamp(64px,9vh,104px) }
+
+/* How it works — five steps */
+.steps{ margin-top:clamp(56px,8vh,90px) }
+.step{ display:grid; grid-template-columns:56px 1fr auto; align-items:baseline; gap:clamp(16px,3vw,40px); padding:clamp(24px,3.6vh,40px) 0; border-top:1px solid var(--line-soft) }
+.step:last-child{ border-bottom:1px solid var(--line-soft) }
+.step-no{ font-size:13px; font-weight:600; color:var(--text-3); font-variant-numeric:tabular-nums }
+.step-title{ margin:0 0 8px; font-size:clamp(1.15rem,calc(.85rem + .7vw),1.6rem); font-weight:600 }
+.step-desc{ margin:0; color:var(--text-2); font-size:15.5px; line-height:1.65; max-width:56ch }
+.step-tag{ font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); white-space:nowrap }
+.how-core{ margin-top:clamp(72px,11vh,120px) }
+.how-core .stmt{ max-width:900px; margin-inline:auto }
+
+/* Workforce */
+.wf-lead{
+  margin:clamp(40px,6vh,64px) 0 0; max-width:640px; font-size:clamp(1.2rem,calc(.9rem + .8vw),1.65rem);
+  line-height:1.55; color:rgba(255,255,255,.88);
+}
+.wf-grid{ display:grid; grid-template-columns:1fr 1fr; margin-top:clamp(44px,6vh,68px); border-top:1px solid var(--line-soft) }
+.wf-col{ padding:clamp(28px,4vh,44px) clamp(20px,3vw,44px) }
+.wf-col:first-child{ padding-left:0 }
+.wf-col + .wf-col{ border-left:1px solid var(--line-soft) }
+.wf-col h3{ margin:0 0 22px; font-size:var(--h3-fs); font-weight:600 }
+.wf-col ul{ display:flex; flex-direction:column; gap:14px }
+.wf-col li{
+  display:flex; align-items:baseline; gap:12px; color:var(--text-2); font-size:15.5px; line-height:1.6;
+}
+.wf-col li::before{ content:""; flex:none; width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.35); transform:translateY(-1px) }
+.wf-assure{ margin-top:clamp(56px,8vh,90px) }
+
+/* Selected work — self-built projects, numbered list */
+.work-list{ margin-top:clamp(56px,8vh,90px) }
+.work{
+  display:grid; grid-template-columns:64px 1fr; gap:clamp(18px,3vw,44px);
+  padding:clamp(30px,4.5vh,52px) 0; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+}
+.work-no{ font-size:14px; font-weight:600; color:var(--text-3); padding-top:8px; font-variant-numeric:tabular-nums }
+.work-body{ min-width:0 }
+.work-head{ display:flex; align-items:center; gap:14px; flex-wrap:wrap }
+.work-name{ margin:0; font-size:var(--h3-fs); font-weight:600; letter-spacing:-.02em }
+.work-pill{
+  display:inline-flex; align-items:center; gap:8px; padding:4px 12px; border:1px solid var(--line);
+  border-radius:999px; background:rgba(255,255,255,.04); color:var(--text-2);
+  font-size:11.5px; font-weight:600; letter-spacing:.08em; white-space:nowrap;
+}
+.work-pill::before{ content:""; width:5px; height:5px; border-radius:50%; background:#fff; opacity:.7 }
+.work-tag{ margin:18px 0 0; font-size:clamp(1.3rem,calc(1rem + .8vw),2rem); font-weight:500; letter-spacing:-.025em; line-height:1.3; max-width:38ch }
+.work-desc{ margin:14px 0 0; max-width:64ch; color:var(--text-2); font-size:16px; line-height:1.7 }
+.work-meta{
+  display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(24px,4vw,64px);
+  margin:clamp(28px,4.5vh,42px) 0 0; border-top:1px solid var(--line-soft); padding-top:clamp(22px,3vh,30px);
+}
+.work-meta > div{ min-width:0 }
+.work-meta dt{ font-size:11.5px; font-weight:600; letter-spacing:.14em; color:var(--text-3); text-transform:uppercase; margin-bottom:12px }
+.work-meta dd{ margin:0; color:var(--text-2); font-size:14.5px; line-height:1.7 }
+.work-bullets{ display:flex; flex-direction:column; gap:9px }
+.work-bullets li{ display:flex; align-items:baseline; gap:10px }
+.work-bullets li::before{ content:"—"; flex:none; color:var(--text-3) }
+
+/* Product lab — centered panel */
+.lab-panel{
+  border:1px solid var(--line-soft); border-radius:28px; text-align:center;
+  background:radial-gradient(120% 150% at 50% 0%,rgba(255,255,255,.055),transparent 62%);
+  padding:clamp(64px,10vw,130px) clamp(20px,4vw,60px);
+}
+.pill{
+  display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border:1px solid var(--line);
+  border-radius:999px; background:rgba(255,255,255,.045); color:var(--text-2);
+  font-size:12.5px; font-weight:600; letter-spacing:.08em;
+}
+.pill::before{ content:""; width:5px; height:5px; border-radius:50%; background:#fff; opacity:.75 }
+.lab-title{ margin:34px 0 0; font-size:var(--h2-fs); font-weight:600 }
+.lab-stmt{
+  margin:26px auto 0; max-width:760px; font-size:clamp(1.7rem,calc(1.1rem + 1.6vw),3rem);
+  font-weight:600; line-height:1.25; letter-spacing:-.03em;
+}
+.lab-stmt em{ color:var(--muted) }
+.lab-note{ margin:20px auto 0; color:var(--text-3); font-size:15.5px }
+.lab-panel .btn{ margin-top:40px }
+
+/* Contact */
+.contact-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(40px,6vw,90px); margin-top:clamp(48px,7vh,76px); align-items:start }
+.c-left{ padding-top:8px }
+.c-desc{ margin:22px 0 0; max-width:46ch; color:var(--muted); font-size:16px; line-height:1.75 }
+.c-mail{
+  display:inline-flex; align-items:center; gap:10px; margin-top:36px; font-size:16px; font-weight:500;
+  text-decoration:none; border-bottom:1px solid rgba(255,255,255,.3); padding-bottom:3px;
+  transition:border-color .3s ease,color .3s ease;
+}
+.c-mail:hover{ border-color:#fff; color:#fff }
+.c-mail small{ color:var(--text-3); font-weight:400 }
+
+/* Left rail — "what happens next" mini timeline */
+.c-next{ margin-top:clamp(40px,5.5vh,60px) }
+.c-next-label{
+  display:flex; align-items:center; gap:14px; margin:0;
+  font-size:11.5px; font-weight:600; letter-spacing:.14em; color:var(--text-3); text-transform:uppercase;
+}
+.c-next-label::after{ content:""; flex:1; height:1px; background:var(--line-soft) }
+.c-steps{ margin:20px 0 0 }
+.c-step{
+  display:grid; grid-template-columns:30px 1fr; gap:10px; align-items:baseline;
+  padding:14px 0; border-top:1px solid var(--line-soft);
+}
+.c-step:last-child{ border-bottom:1px solid var(--line-soft) }
+.c-step-no{ font-size:12px; font-weight:600; color:var(--text-3); font-variant-numeric:tabular-nums }
+.c-step p{ margin:0; color:var(--text-2); font-size:14.5px; line-height:1.6 }
+
+/* Form */
+.form-title{ margin:0; font-size:var(--h3-fs); font-weight:600 }
+.form-fields{ display:grid; grid-template-columns:1fr 1fr; gap:22px 20px; margin-top:30px }
+.field{ display:flex; flex-direction:column; gap:8px }
+.field--full{ grid-column:1 / -1 }
+.field-label{ font-size:12.5px; font-weight:500; color:rgba(255,255,255,.6); letter-spacing:.02em }
+.req{ color:rgba(255,255,255,.4) }
+.ctl{
+  width:100%; height:48px; padding:0 14px; border-radius:12px; border:1px solid var(--line);
+  background:rgba(255,255,255,.045); color:#fff; font-size:15px; font-family:inherit;
+  transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+textarea.ctl{ height:auto; min-height:118px; padding:13px 14px; resize:vertical; line-height:1.55 }
+.ctl::placeholder{ color:rgba(255,255,255,.28) }
+.ctl:hover{ border-color:rgba(255,255,255,.22) }
+.ctl:focus{ outline:none; border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); box-shadow:0 0 0 3px rgba(255,255,255,.06) }
+select.ctl{
+  appearance:none; -webkit-appearance:none; padding-right:38px; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ffffff' stroke-opacity='.55' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 15px center;
+}
+select.ctl option{ background:#000; color:#fff }
+.ctl:disabled{ opacity:.45; cursor:not-allowed }
+.field-err{ display:none; color:#ff9d9d; font-size:12.5px; line-height:1.4 }
+.field.has-error .ctl{ border-color:rgba(255,130,130,.65) }
+.field.has-error .field-err{ display:block }
+.form-actions{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:28px }
+.form-note{ margin:16px 0 0; color:var(--text-3); font-size:13.5px }
+
+/* result */
+.result{
+  margin-top:34px; padding:clamp(22px,3vw,30px); border:1px solid var(--line);
+  border-radius:18px; background:rgba(255,255,255,.025);
+}
+.result-status{ display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600 }
+.result-status::before{
+  content:""; width:7px; height:7px; flex:none; border-radius:50%; background:#fff;
+}
+.result-hint{ margin:10px 0 0; color:var(--text-3); font-size:13.5px; line-height:1.6; max-width:62ch }
+.sum-ctl{
+  width:100%; margin-top:18px; padding:14px; border-radius:12px; border:1px solid var(--line-soft);
+  background:#000; color:var(--text-2); font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+  white-space:pre-wrap; resize:vertical; min-height:200px;
+}
+.sum-ctl:focus{ outline:none; border-color:rgba(255,255,255,.4) }
+.result-actions{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:18px }
+.btn--link{ background:none; color:var(--text-2); text-decoration:underline; text-underline-offset:4px; padding:4px 2px; font-size:13.5px }
+.btn--link:hover{ color:#fff }
+
+/* form result — success state keeps only status + "back to edit" */
+.result[data-mode="ok"] .sum-ctl,
+.result[data-mode="ok"] #btn-copy,
+.result[data-mode="ok"] #btn-mail{ display:none }
+
+/* Footer */
+.site-footer{ border-top:1px solid var(--line) }
+.footer-in{ padding-block:clamp(48px,7vh,80px) }
+.footer-grid{ display:grid; grid-template-columns:1fr auto auto; gap:clamp(32px,5vw,72px); align-items:start }
+.foot-brand{ display:flex; flex-direction:column; align-items:flex-start; gap:14px }
+.foot-nav{ display:flex; gap:clamp(20px,2.6vw,36px); flex-wrap:wrap }
+.foot-nav a{ color:var(--text-3); font-size:14px; text-decoration:none; transition:color .3s }
+.foot-nav a:hover{ color:#fff }
+.foot-end{ display:flex; flex-direction:column; align-items:flex-end; gap:14px }
+.foot-mail{ color:var(--text-2); font-size:14.5px; text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:2px }
+.foot-mail:hover{ color:#fff }
+.copy{ margin:0; color:var(--text-3); font-size:13px }
+
+/* ============================================================
+   Responsive (≤900) — hamburger overlay
+   ============================================================ */
+@media (max-width:900px){
+  body.menu-open{ overflow:hidden; background:#000 }
+  body.menu-open main,body.menu-open .site-footer{ visibility:hidden }
+
+  .header-in{ display:flex; justify-content:space-between; align-items:center; min-height:64px }
+  .header-actions .btn--sm,.lang-switch--header{ display:none }
+  .nav-toggle{ display:inline-flex }
+
+  .nav{
+    position:fixed; inset:0; z-index:50;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:#000; padding:calc(96px + env(safe-area-inset-top)) var(--pad) 40px;
+    overflow-y:auto;
+    opacity:0; visibility:hidden; transform:translateY(-10px);
+    transition:opacity .38s ease,transform .38s var(--ease),visibility 0s linear .38s;
+  }
+  body.menu-open .nav{
+    opacity:1; visibility:visible; transform:none;
+    transition:opacity .38s ease,transform .38s var(--ease);
+  }
+  .nav-list{ flex-direction:column; gap:6px; width:100%; max-width:360px }
+  .nav-list a{ font-size:22px; font-weight:500; color:var(--text-2); padding:9px 4px }
+  .nav-list a::after{ display:none }
+  .nav-list .nav-cta{ display:block; width:100%; margin-top:20px }
+  .nav-list .nav-cta .btn{ width:100%; height:54px }
+  .menu-lang{ display:flex; margin-top:34px }
+  .menu-lang .lang-switch{ border-color:rgba(255,255,255,.16) }
+
+  .hero{ min-height:calc(100svh - 64px) }
+  .hero-in{ padding-top:clamp(56px,10vh,90px) }
+  .strip-grid{ grid-template-columns:1fr }
+  .stat{ justify-content:flex-start; padding:16px var(--pad); font-size:15px }
+  .stat + .stat{ border-left:0; border-top:1px solid var(--line-soft) }
+
+  section[id]{ scroll-margin-top:80px }
+  .svc{ grid-template-columns:40px 1fr }
+  .svc-meta{ grid-template-columns:1fr }
+  .step{ grid-template-columns:40px 1fr; grid-template-rows:auto auto }
+  .step-tag{ grid-column:2; margin-top:-4px }
+  .work{ grid-template-columns:40px 1fr }
+  .work-meta{ grid-template-columns:1fr }
+  .wf-grid{ grid-template-columns:1fr }
+  .wf-col:first-child{ padding-left:0 }
+  .wf-col + .wf-col{ border-left:0; border-top:1px solid var(--line-soft); padding-left:0 }
+  .contact-grid{ grid-template-columns:1fr }
+  .footer-grid{ grid-template-columns:1fr; align-items:start }
+  .foot-end{ align-items:flex-start }
+}
+@media (max-width:560px){
+  .hero-in{ padding-top:clamp(48px,9vh,76px) }
+  .display{ font-size:clamp(2.1rem,calc(.9rem + 6.6vw),3.5rem); letter-spacing:-.04em }
+  .lede{ font-size:15.5px }
+  .cta-row{ flex-direction:column; align-items:stretch; width:min(100%,350px); margin-left:auto; margin-right:auto }
+  .cta-row .btn{ width:100% }
+  .stat{ font-size:14px; line-height:1.35 }
+  .form-fields{ grid-template-columns:1fr }
+}
+@media (max-width:380px){
+  .display{ font-size:clamp(1.95rem,calc(.85rem + 6vw),3rem) }
+  .badge{ font-size:12px; padding:7px 13px }
+}
+
+/* ============================================================
+   Reduced motion — everything rests visible
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  html.js [data-rv],html.js .mask-in,html.js .reveal{
+    animation:none !important; opacity:1 !important; transform:none !important; transition:none !important;
+  }
+  .btn,.btn::after,.btn:hover{ transform:none !important }
+  .nav,.badge-dot::after{ animation:none !important; transition:none !important }
+}
+</style>
+<noscript>
+  <style>
+    .nav{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;background:transparent!important;padding:0!important;justify-content:flex-start!important;overflow:visible!important}
+    .nav-list{flex-direction:row!important;gap:20px!important;flex-wrap:wrap;justify-content:center;width:auto!important;max-width:none!important}
+    .nav-list a{font-size:15px!important;color:var(--text-2)!important;padding:6px 4px!important}
+    .nav-list .nav-cta{display:none!important}
+    .menu-lang,.lang-switch,.nav-toggle{display:none!important}
+    .header-actions .btn--sm{display:inline-flex!important}
+    body{overflow-x:hidden}
+    .reveal{opacity:1!important;transform:none!important}
+  </style>
+</noscript>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="0 0 32 32" fill="none">
+    <g fill="#ffffff">
+      <rect x="14.5" y="3.2" width="7" height="6.8" rx="2.4"/>
+      <rect x="14.5" y="12.6" width="7" height="6.8" rx="2.4" opacity=".55"/>
+      <rect x="14.5" y="22" width="7" height="6.8" rx="2.4" opacity=".28"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity=".4">
+      <path d="M10 6.6h2.6"/>
+      <path d="M9 16h3.6"/>
+      <path d="M10 25.4h2.6"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header-in">
+
+    <a class="brand d0" href="#top" data-rv data-i18n-aria="ui.brandAria" aria-label="Agenova — 首页">
+      <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="wm">Agenova<span class="wm-ai">.ai</span></span>
+    </a>
+
+    <nav class="nav" id="site-nav" data-i18n-aria="ui.navLabel" aria-label="主导航">
+      <ul class="nav-list">
+        <li><a href="#services" data-i18n="nav.services">服务</a></li>
+        <li><a href="#how-it-works" data-i18n="nav.how">合作方式</a></li>
+        <li><a href="#workforce" data-i18n="nav.workforce">AI 员工</a></li>
+        <li><a href="#products" data-i18n="nav.products">产品</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+        <li class="nav-cta"><a class="btn btn--solid btn--lg" href="#contact" data-i18n="cta.start">启动项目</a></li>
+      </ul>
+      <div class="menu-lang">
+        <div class="lang-switch" role="group" data-i18n-aria="ui.langLabel" aria-label="切换语言 / Switch language">
+          <button class="lang-btn is-active" type="button" data-lang="zh" aria-pressed="true" aria-label="Chinese">中</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch lang-switch--header" role="group" data-i18n-aria="ui.langLabel" aria-label="切换语言 / Switch language">
+        <button class="lang-btn is-active" type="button" data-lang="zh" aria-pressed="true" aria-label="Chinese">中</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+      <a class="btn btn--sm btn--solid" href="#contact" data-i18n="cta.start">启动项目</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria="ui.menuOpen" aria-label="打开菜单">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 8h16M4 12h16M4 16h16"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== Hero ===================== -->
+  <section class="hero" aria-label="Agenova — hero">
+    <div class="wrap hero-in">
+
+      <span class="badge d1" data-rv>
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span data-i18n="hero.badge">AI 员工队伍</span>
+      </span>
+
+      <h1 class="display">
+        <span class="mask d2"><span class="mask-in" data-i18n="hero.title.l1">你的 AI 员工队伍，</span></span>
+        <span class="mask d3"><span class="mask-in" data-i18n="hero.title.l2"><em>交付成果。</em></span></span>
+      </h1>
+
+      <p class="lede d4" data-rv data-i18n="hero.lede">我们为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。</p>
+
+      <div class="cta-row d5" data-rv>
+        <a class="btn btn--solid btn--lg" href="#contact" data-i18n="hero.ctaPrimary">启动项目</a>
+        <a class="btn btn--ghost btn--lg" href="#how-it-works" data-i18n="hero.ctaSecondary">了解合作方式</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== Delivery principles ===================== -->
+  <section class="strip" aria-label="Delivery principles">
+    <ul class="wrap strip-grid">
+      <li class="stat d6" data-rv>
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M7 4.5v15"/><path d="M17 4.5v15"/><path d="M10.6 12h2.8" opacity=".6"/>
+        </svg>
+        <span data-i18n="strip.agent">AI Agent 执行</span>
+      </li>
+      <li class="stat d7" data-rv>
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4.5v10.5"/><path d="M8 11l4 4 4-4"/><path d="M4.5 17.5h15"/>
+        </svg>
+        <span data-i18n="strip.review">人工审核交付</span>
+      </li>
+      <li class="stat d8" data-rv>
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <circle cx="7" cy="14.8" r="4.6" opacity=".22"/><circle cx="17" cy="14.8" r="4.6" opacity=".48"/><circle cx="12" cy="15.1" r="5.2"/>
+        </svg>
+        <span data-i18n="strip.workflow">贴合你的工作流</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== What we ship ===================== -->
+  <section id="services" class="sec sec-pad" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="sec-inner">
+        <div class="sec-head reveal">
+          <h2 class="sec-title" id="services-title" data-i18n="svc.title">我们交付什么</h2>
+        </div>
+
+        <ol class="svc-list">
+          <li class="svc reveal">
+            <span class="svc-no" aria-hidden="true">01</span>
+            <div>
+              <h3 class="svc-title" data-i18n="svc1.title">AI 产品与 MVP</h3>
+              <p class="svc-desc" data-i18n="svc1.desc">将已验证的产品想法变成可使用、可测试的产品。</p>
+              <dl class="svc-meta">
+                <div><dt data-i18n="ui.deliverable">交付物</dt><dd data-i18n="svc1.dlv">范围定义、体验设计、可运行的前后端与部署交接。</dd></div>
+                <div><dt data-i18n="ui.fit">适用场景</dt><dd data-i18n="svc1.fit">你有明确的问题与初步假设，需要一个能对真实用户测试的最小产品。</dd></div>
+                <div><dt data-i18n="ui.notIn">不包含</dt><dd data-i18n="svc1.notIn">从模糊想法开始的无边界长线研发；我们不替客户定义产品方向。</dd></div>
+              </dl>
+            </div>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-no" aria-hidden="true">02</span>
+            <div>
+              <h3 class="svc-title" data-i18n="svc2.title">业务流程自动化</h3>
+              <p class="svc-desc" data-i18n="svc2.desc">将重复性运营工作转化为可靠、可审查的 AI 工作流。</p>
+              <dl class="svc-meta">
+                <div><dt data-i18n="ui.deliverable">交付物</dt><dd data-i18n="svc2.dlv">流程梳理、系统集成、人工审核节点与操作文档。</dd></div>
+                <div><dt data-i18n="ui.fit">适用场景</dt><dd data-i18n="svc2.fit">你的团队把大量时间花在数据搬运、表单处理与跨系统协调上。</dd></div>
+                <div><dt data-i18n="ui.notIn">不包含</dt><dd data-i18n="svc2.notIn">无人值守的黑盒自动化；每个流程都保留人工审核节点。</dd></div>
+              </dl>
+            </div>
+          </li>
+          <li class="svc reveal">
+            <span class="svc-no" aria-hidden="true">03</span>
+            <div>
+              <h3 class="svc-title" data-i18n="svc3.title">定制软件与内部工具</h3>
+              <p class="svc-desc" data-i18n="svc3.desc">围绕现有业务流程，构建聚焦的内部系统或面向客户的软件。</p>
+              <dl class="svc-meta">
+                <div><dt data-i18n="ui.deliverable">交付物</dt><dd data-i18n="svc3.dlv">可上线功能、质量验证、交接与迭代计划。</dd></div>
+                <div><dt data-i18n="ui.fit">适用场景</dt><dd data-i18n="svc3.fit">现成工具无法覆盖你的流程，需要按业务本身定制软件。</dd></div>
+                <div><dt data-i18n="ui.notIn">不包含</dt><dd data-i18n="svc3.notIn">大而全的平台型系统；我们只做聚焦、可长期维护的软件。</dd></div>
+              </dl>
+            </div>
+          </li>
+        </ol>
+
+        <p class="stmt services-stmt reveal" data-i18n="svc.stmt">不确定该做什么？先告诉我们<em>问题</em>，不必先给出解决方案。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== How it works ===================== -->
+  <section id="how-it-works" class="sec sec-pad" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="sec-inner">
+        <div class="sec-head reveal">
+          <h2 class="sec-title" id="how-title" data-i18n="how.title">如何合作</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-no" aria-hidden="true">01</span>
+            <div>
+              <h3 class="step-title" data-i18n="how1.title">界定问题</h3>
+              <p class="step-desc" data-i18n="how1.desc">明确业务问题、用户、约束与成功标准。</p>
+            </div>
+            <span class="step-tag" aria-hidden="true" data-i18n-suffix="how1.title">Scope the work</span>
+          </li>
+          <li class="step reveal">
+            <span class="step-no" aria-hidden="true">02</span>
+            <div>
+              <h3 class="step-title" data-i18n="how2.title">制定计划</h3>
+              <p class="step-desc" data-i18n="how2.desc">将范围转为可执行的优先级与交付计划。</p>
+            </div>
+            <span class="step-tag" aria-hidden="true" data-i18n-suffix="how2.title">Set the plan</span>
+          </li>
+          <li class="step reveal">
+            <span class="step-no" aria-hidden="true">03</span>
+            <div>
+              <h3 class="step-title" data-i18n="how3.title">透明构建</h3>
+              <p class="step-desc" data-i18n="how3.desc">Agent 执行任务，进度、风险与待确认决策定期同步。</p>
+            </div>
+            <span class="step-tag" aria-hidden="true" data-i18n-suffix="how3.title">Build in the open</span>
+          </li>
+          <li class="step reveal">
+            <span class="step-no" aria-hidden="true">04</span>
+            <div>
+              <h3 class="step-title" data-i18n="how4.title">人工把关</h3>
+              <p class="step-desc" data-i18n="how4.desc">架构、质量与上线等关键决策由人审核把关。</p>
+            </div>
+            <span class="step-tag" aria-hidden="true" data-i18n-suffix="how4.title">Review what matters</span>
+          </li>
+          <li class="step reveal">
+            <span class="step-no" aria-hidden="true">05</span>
+            <div>
+              <h3 class="step-title" data-i18n="how5.title">交付并迭代</h3>
+              <p class="step-desc" data-i18n="how5.desc">先交付可用成果，再根据真实使用持续改进。</p>
+            </div>
+            <span class="step-tag" aria-hidden="true" data-i18n-suffix="how5.title">Ship and improve</span>
+          </li>
+        </ol>
+
+        <p class="stmt how-core reveal" data-i18n="how.core">AI 加速执行，责任仍由<em>人</em>承担。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Workforce ===================== -->
+  <section id="workforce" class="sec sec-pad" aria-labelledby="wf-title">
+    <div class="wrap">
+      <div class="sec-inner">
+        <div class="sec-head reveal">
+          <h2 class="sec-title" id="wf-title" data-i18n="wf.title">AI 员工公司</h2>
+        </div>
+
+        <p class="wf-lead reveal" data-i18n="wf.lead">我们把软件交付组织成一支 AI 员工队伍：Agent 做执行，人做判断与验收。</p>
+
+        <div class="wf-grid">
+          <div class="wf-col reveal">
+            <h3 data-i18n="wf.agents">由 Agent 执行</h3>
+            <ul>
+              <li data-i18n="wf.ag1">研究</li>
+              <li data-i18n="wf.ag2">设计</li>
+              <li data-i18n="wf.ag3">开发</li>
+              <li data-i18n="wf.ag4">测试</li>
+              <li data-i18n="wf.ag5">文档</li>
+            </ul>
+          </div>
+          <div class="wf-col reveal">
+            <h3 data-i18n="wf.humans">由人负责</h3>
+            <ul>
+              <li data-i18n="wf.hm1">范围与优先级</li>
+              <li data-i18n="wf.hm2">架构决策</li>
+              <li data-i18n="wf.hm3">质量验收</li>
+              <li data-i18n="wf.hm4">最终交付</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="stmt wf-assure reveal" data-i18n="wf.assure">在你收到之前，每一份交付都经过<em>人工审核</em>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Selected work ===================== -->
+  <section id="work" class="sec sec-pad" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="sec-inner">
+        <div class="sec-head reveal">
+          <h2 class="sec-title" id="work-title" data-i18n="work.title">代表项目</h2>
+        </div>
+
+        <ol class="work-list">
+          <li class="work reveal">
+            <span class="work-no" aria-hidden="true">01</span>
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-name" data-i18n="work1.name">OneFlow（贾维斯）</h3>
+                <span class="work-pill" data-i18n="work1.type">自主开发</span>
+              </div>
+              <p class="work-tag" data-i18n="work1.tag">一句话驱动的贾维斯式 AI 管家</p>
+              <p class="work-desc" data-i18n="work1.desc">用一句自然语言下指令，Agent 自行拆解、多次调用工具（function calling）、核对并汇报，把任务真正执行完毕。</p>
+
+              <dl class="work-meta">
+                <div>
+                  <dt data-i18n="work.mHigh">亮点</dt>
+                  <dd>
+                    <ul class="work-bullets">
+                      <li data-i18n="work1.h1">语音唤醒 / 离线本地识别</li>
+                      <li data-i18n="work1.h2">主动服务：定时任务、日程提醒、情景关怀</li>
+                      <li data-i18n="work1.h3">能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div>
+                  <dt data-i18n="work.mTech">技术</dt>
+                  <dd data-i18n="work1.tech">Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入</dd>
+                </div>
+              </dl>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Product lab ===================== -->
+  <section id="products" class="sec sec-pad" aria-labelledby="prod-title">
+    <div class="wrap">
+      <div class="sec-inner">
+        <div class="lab-panel reveal">
+          <span class="pill" data-i18n="prod.status">开发中</span>
+          <h2 class="lab-title" id="prod-title" data-i18n="prod.title">产品实验室</h2>
+          <p class="lab-stmt" data-i18n="prod.stmt">自研产品正在<em>开发中</em>。</p>
+          <p class="lab-note" data-i18n="prod.note">目前优先承接定制项目。</p>
+          <a class="btn btn--ghost btn--sm" href="#contact" data-i18n="prod.cta">告诉我们你的项目</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Start a project ===================== -->
+  <section id="contact" class="sec sec-pad" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="sec-inner">
+
+        <div class="sec-head reveal">
+          <h2 class="sec-title" id="contact-title" data-i18n="contact.title">告诉我们要解决的业务问题。</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="c-left reveal">
+            <p class="c-desc" data-i18n="contact.desc">告诉我们你的问题、现状与预算范围。我们会回复一个可执行的下一步，而不是一份套话式销售材料。</p>
+
+            <div class="c-next">
+              <p class="c-next-label" data-i18n="contact.nextLabel">提交后会发生什么</p>
+              <ol class="c-steps">
+                <li class="c-step">
+                  <span class="c-step-no" aria-hidden="true">01</span>
+                  <p data-i18n="contact.step1">收到需求，我们确认理解无误。</p>
+                </li>
+                <li class="c-step">
+                  <span class="c-step-no" aria-hidden="true">02</span>
+                  <p data-i18n="contact.step2">2 个工作日内完成可行性评估。</p>
+                </li>
+                <li class="c-step">
+                  <span class="c-step-no" aria-hidden="true">03</span>
+                  <p data-i18n="contact.step3">回复明确的下一步；不适合会直说。</p>
+                </li>
+              </ol>
+            </div>
+
+            <a class="c-mail" href="mailto:lin972718993@gmail.com">lin972718993@gmail.com<small data-i18n="contact.mailHint">直接邮件</small></a>
+          </div>
+
+          <div class="reveal">
+            <h3 class="form-title" data-i18n="f.title">项目需求简述</h3>
+
+            <form class="form-fields" id="brief-form" action="https://formspree.io/f/mrpgkrqr" method="post">
+              <!-- 与脚本内 FORM_ENDPOINT 同步:上线前把两处 YOUR_FORM_ID 替换为真实 Form ID -->
+              <input type="hidden" name="_subject">
+              <input type="hidden" name="_replyto">
+
+              <div class="field" id="f-name">
+                <label class="field-label" for="i-name" data-i18n="f.name">姓名 <span class="req" aria-hidden="true">*</span></label>
+                <input class="ctl" id="i-name" name="name" type="text" autocomplete="name" required>
+                <span class="field-err" data-i18n="f.errName" role="alert">请填写姓名</span>
+              </div>
+
+              <div class="field" id="f-email">
+                <label class="field-label" for="i-email" data-i18n="f.email">工作邮箱 <span class="req" aria-hidden="true">*</span></label>
+                <input class="ctl" id="i-email" name="email" type="email" autocomplete="email" required>
+                <span class="field-err" data-i18n="f.errEmail" role="alert">请填写工作邮箱</span>
+              </div>
+
+              <div class="field field--full" id="f-company">
+                <label class="field-label" for="i-company" data-i18n="f.company">公司 / 团队</label>
+                <input class="ctl" id="i-company" name="company" type="text" autocomplete="organization">
+              </div>
+
+              <div class="field field--full" id="f-what">
+                <label class="field-label" for="i-what" data-i18n="f.what">想做什么？<span class="req" aria-hidden="true">*</span></label>
+                <textarea class="ctl" id="i-what" name="what" required></textarea>
+                <span class="field-err" data-i18n="f.errWhat" role="alert">请简单描述你想做什么</span>
+              </div>
+
+              <div class="field" id="f-type">
+                <label class="field-label" for="i-type" data-i18n="f.type">项目类型</label>
+                <select class="ctl" id="i-type" name="type">
+                  <option value="" disabled selected data-i18n="f.choose">请选择</option>
+                  <option value="AI product &amp; MVP" data-i18n="f.type1">AI 产品与 MVP</option>
+                  <option value="Workflow automation" data-i18n="f.type2">业务流程自动化</option>
+                  <option value="Custom software" data-i18n="f.type3">定制软件与内部工具</option>
+                  <option value="Other" data-i18n="f.type4">其他</option>
+                </select>
+              </div>
+
+              <div class="field" id="f-budget">
+                <label class="field-label" for="i-budget" data-i18n="f.budget">预算区间</label>
+                <select class="ctl" id="i-budget" name="budget">
+                  <option value="" disabled selected data-i18n="f.choose">请选择</option>
+                  <option value="Under 5k" data-i18n="f.b1">5k 以下</option>
+                  <option value="5k - 15k" data-i18n="f.b2">5k – 15k</option>
+                  <option value="15k - 30k" data-i18n="f.b3">15k – 30k</option>
+                  <option value="30k+" data-i18n="f.b4">30k 以上</option>
+                  <option value="Need scoping" data-i18n="f.b5">需要评估</option>
+                </select>
+              </div>
+
+              <div class="field" id="f-currency">
+                <label class="field-label" for="i-currency" data-i18n="f.currency">货币</label>
+                <select class="ctl" id="i-currency" name="currency">
+                  <option value="CNY" selected data-i18n="f.c1">CNY</option>
+                  <option value="USD" data-i18n="f.c2">USD</option>
+                  <option value="Other" data-i18n="f.c3">Other</option>
+                </select>
+              </div>
+
+              <div class="field" id="f-timeline">
+                <label class="field-label" for="i-timeline" data-i18n="f.timeline">期望时间</label>
+                <select class="ctl" id="i-timeline" name="timeline">
+                  <option value="" disabled selected data-i18n="f.choose">请选择</option>
+                  <option value="This month" data-i18n="f.t1">本月</option>
+                  <option value="Next quarter" data-i18n="f.t2">下季度</option>
+                  <option value="Exploring" data-i18n="f.t3">还在探索</option>
+                </select>
+              </div>
+
+              <div class="form-actions field--full">
+                <button class="btn btn--solid btn--lg" type="submit" data-i18n="f.submit">发送项目需求</button>
+              </div>
+
+            </form>
+
+            <p class="form-note field--full" data-i18n="f.privacy">这些信息仅用于处理你的咨询。</p>
+            <p class="form-note" data-i18n="contact.fallback">邮件客户端无法打开？可直接发送到 <a href="mailto:lin972718993@gmail.com" style="color:var(--text-2)">lin972718993@gmail.com</a></p>
+
+            <div class="result" id="form-result" hidden>
+              <p class="result-status" id="result-status" role="status"></p>
+              <p class="result-hint" id="result-hint"></p>
+              <textarea class="sum-ctl" id="sum-text" readonly data-i18n-aria="f.sumAria" aria-label="项目需求摘要"></textarea>
+              <div class="result-actions">
+                <button class="btn btn--sm btn--ghost" id="btn-copy" type="button" data-i18n="f.copy">复制摘要</button>
+                <button class="btn btn--sm btn--solid" id="btn-mail" type="button" data-i18n="f.mail">打开邮件草稿</button>
+                <button class="btn--link" id="btn-edit" type="button" data-i18n="f.back">返回修改</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="sec-inner">
+      <div class="footer-grid">
+
+        <div class="foot-brand">
+          <a class="brand" href="#top" data-i18n-aria="ui.brandAria" aria-label="Agenova — 首页">
+            <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+            <span class="wm">Agenova<span class="wm-ai">.ai</span></span>
+          </a>
+        </div>
+
+        <nav class="foot-nav" data-i18n-aria="ui.footNavLabel" aria-label="页脚导航">
+          <a href="#services" data-i18n="nav.services">服务</a>
+          <a href="#how-it-works" data-i18n="nav.how">合作方式</a>
+          <a href="#workforce" data-i18n="nav.workforce">AI 员工</a>
+          <a href="#products" data-i18n="nav.products">产品</a>
+          <a href="#contact" data-i18n="nav.contact">联系</a>
+        </nav>
+
+        <div class="foot-end">
+          <a class="foot-mail" href="mailto:lin972718993@gmail.com">lin972718993@gmail.com</a>
+          <div class="lang-switch" role="group" data-i18n-aria="ui.langLabel" aria-label="切换语言 / Switch language">
+            <button class="lang-btn is-active" type="button" data-lang="zh" aria-pressed="true" aria-label="Chinese">中</button>
+            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+          </div>
+          <p class="copy">© Agenova 2026</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Formspree 真实收件:上线前把 YOUR_FORM_ID 替换为真实 Form ID(action 属性需同步) */
+  var FORM_ENDPOINT = 'https://formspree.io/f/mrpgkrqr';
+  var FORM_IS_PLACEHOLDER = FORM_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1;
+  var CONTACT_EMAIL = 'lin972718993@gmail.com';
+  var LANG_KEY = 'agenova.lang';
+
+  /* ---------- copy dict: keys shared by zh/en; zh is the no-JS default ---------- */
+  var copy = {
+    zh: {
+      'meta.title': 'Agenova | AI 产品、流程自动化与定制软件',
+      'meta.desc': 'Agenova 用一支 AI 员工队伍，为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流：AI 产品与 MVP、业务流程自动化、定制软件与内部工具。所有交付都经人工审核，责任到人。',
+      'og.title': 'Agenova | AI 产品、流程自动化与定制软件',
+      'og.desc': 'Agenova 用一支 AI 员工队伍，为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。人工审核，责任到人。',
+      'og.locale': 'zh_CN',
+      'ui.navLabel': '主导航',
+      'ui.footNavLabel': '页脚导航',
+      'ui.langLabel': '切换语言',
+      'ui.brandAria': 'Agenova — 首页',
+      'ui.menuOpen': '打开菜单',
+      'ui.menuClose': '关闭菜单',
+      'ui.deliverable': '交付物',
+      'ui.fit': '适用场景',
+      'ui.notIn': '不包含',
+      'nav.services': '服务',
+      'nav.how': '合作方式',
+      'nav.workforce': 'AI 员工',
+      'nav.products': '产品',
+      'nav.contact': '联系',
+      'cta.start': '启动项目',
+      'hero.badge': 'AI 员工队伍',
+      'hero.title.l1': '你的 AI 员工队伍，',
+      'hero.title.l2': '<em>交付成果。</em>',
+      'hero.lede': '我们为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。',
+      'hero.ctaPrimary': '启动项目',
+      'hero.ctaSecondary': '了解合作方式',
+      'strip.agent': 'AI Agent 执行',
+      'strip.review': '人工审核交付',
+      'strip.workflow': '贴合你的工作流',
+      'svc.title': '我们交付什么',
+      'svc.stmt': '不确定该做什么？先告诉我们<em>问题</em>，不必先给出解决方案。',
+      'svc1.title': 'AI 产品与 MVP',
+      'svc1.desc': '将已验证的产品想法变成可使用、可测试的产品。',
+      'svc1.dlv': '范围定义、体验设计、可运行的前后端与部署交接。',
+      'svc1.fit': '你有明确的问题与初步假设，需要一个能对真实用户测试的最小产品。',
+      'svc1.notIn': '从模糊想法开始的无边界长线研发；我们不替客户定义产品方向。',
+      'svc2.title': '业务流程自动化',
+      'svc2.desc': '将重复性运营工作转化为可靠、可审查的 AI 工作流。',
+      'svc2.dlv': '流程梳理、系统集成、人工审核节点与操作文档。',
+      'svc2.fit': '你的团队把大量时间花在数据搬运、表单处理与跨系统协调上。',
+      'svc2.notIn': '无人值守的黑盒自动化；每个流程都保留人工审核节点。',
+      'svc3.title': '定制软件与内部工具',
+      'svc3.desc': '围绕现有业务流程，构建聚焦的内部系统或面向客户的软件。',
+      'svc3.dlv': '可上线功能、质量验证、交接与迭代计划。',
+      'svc3.fit': '现成工具无法覆盖你的流程，需要按业务本身定制软件。',
+      'svc3.notIn': '大而全的平台型系统；我们只做聚焦、可长期维护的软件。',
+      'how.title': '如何合作',
+      'how.core': 'AI 加速执行，责任仍由<em>人</em>承担。',
+      'how1.title': '界定问题',
+      'how1.desc': '明确业务问题、用户、约束与成功标准。',
+      'how2.title': '制定计划',
+      'how2.desc': '将范围转为可执行的优先级与交付计划。',
+      'how3.title': '透明构建',
+      'how3.desc': 'Agent 执行任务，进度、风险与待确认决策定期同步。',
+      'how4.title': '人工把关',
+      'how4.desc': '架构、质量与上线等关键决策由人审核把关。',
+      'how5.title': '交付并迭代',
+      'how5.desc': '先交付可用成果，再根据真实使用持续改进。',
+      'wf.title': 'AI 员工公司',
+      'wf.lead': '我们把软件交付组织成一支 AI 员工队伍：Agent 做执行，人做判断与验收。',
+      'wf.agents': '由 Agent 执行',
+      'wf.humans': '由人负责',
+      'wf.ag1': '研究',
+      'wf.ag2': '设计',
+      'wf.ag3': '开发',
+      'wf.ag4': '测试',
+      'wf.ag5': '文档',
+      'wf.hm1': '范围与优先级',
+      'wf.hm2': '架构决策',
+      'wf.hm3': '质量验收',
+      'wf.hm4': '最终交付',
+      'wf.assure': '在你收到之前，每一份交付都经过<em>人工审核</em>。',
+      'prod.status': '开发中',
+      'prod.title': '产品实验室',
+      'prod.stmt': '自研产品正在<em>开发中</em>。',
+      'prod.note': '目前优先承接定制项目。',
+      'prod.cta': '告诉我们你的项目',
+      'work.title': '代表项目',
+      'work.mHigh': '亮点',
+      'work.mTech': '技术',
+      'work1.name': 'OneFlow（贾维斯）',
+      'work1.type': '自主开发',
+      'work1.tag': '一句话驱动的贾维斯式 AI 管家',
+      'work1.desc': '用一句自然语言下指令，Agent 自行拆解、多次调用工具（function calling）、核对并汇报，把任务真正执行完毕。',
+      'work1.h1': '语音唤醒 / 离线本地识别',
+      'work1.h2': '主动服务：定时任务、日程提醒、情景关怀',
+      'work1.h3': '能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线',
+      'work1.tech': 'Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入',
+      'contact.title': '告诉我们要解决的业务问题。',
+      'contact.desc': '告诉我们你的问题、现状与预算范围。我们会回复一个可执行的下一步，而不是一份套话式销售材料。',
+      'contact.mailHint': '直接邮件',
+      'contact.nextLabel': '提交后会发生什么',
+      'contact.step1': '收到需求，我们确认理解无误。',
+      'contact.step2': '2 个工作日内完成可行性评估。',
+      'contact.step3': '回复明确的下一步；不适合会直说。',
+      'contact.fallback': '邮件客户端无法打开？可直接发送到 lin972718993@gmail.com',
+      'f.title': '项目需求简述',
+      'f.choose': '请选择',
+      'f.name': '姓名',
+      'f.email': '工作邮箱',
+      'f.company': '公司 / 团队',
+      'f.what': '想做什么？',
+      'f.type': '项目类型',
+      'f.budget': '预算区间',
+      'f.currency': '货币',
+      'f.timeline': '期望时间',
+      'f.errName': '请填写姓名',
+      'f.errEmail': '请填写工作邮箱',
+      'f.errEmailFmt': '请输入有效的邮箱地址',
+      'f.errWhat': '请简单描述你想做什么',
+      'f.type1': 'AI 产品与 MVP',
+      'f.type2': '业务流程自动化',
+      'f.type3': '定制软件与内部工具',
+      'f.type4': '其他',
+      'f.b1': '5k 以下',
+      'f.b2': '5k – 15k',
+      'f.b3': '15k – 30k',
+      'f.b4': '30k 以上',
+      'f.b5': '需要评估',
+      'f.c1': 'CNY',
+      'f.c2': 'USD',
+      'f.c3': 'Other',
+      'f.t1': '本月',
+      'f.t2': '下季度',
+      'f.t3': '还在探索',
+      'f.submit': '发送项目需求',
+      'f.privacy': '这些信息仅用于处理你的咨询。',
+      'f.sending': '正在提交…',
+      'f.ok': '已收到，我们会在 2 个工作日内回复。',
+      'f.okHint': '若需补充背景，我们会通过邮件与你确认。',
+      'f.fb': '表单即将可用，请邮件联系 lin972718993@gmail.com。',
+      'f.fbHint': '请用下方按钮生成邮件草稿，或复制摘要发送至 lin972718993@gmail.com。',
+      'f.err': '发送失败，请稍后重试。',
+      'f.errHint': '你仍可复制下方摘要，或直接发送邮件至 lin972718993@gmail.com。',
+      'f.copy': '复制摘要',
+      'f.copied': '已复制',
+      'f.mail': '打开邮件草稿',
+      'f.back': '返回修改',
+      'f.sumAria': '项目需求摘要',
+      'sum.name': '姓名',
+      'sum.email': '工作邮箱',
+      'sum.company': '公司 / 团队',
+      'sum.what': '想做什么',
+      'sum.type': '项目类型',
+      'sum.budget': '预算区间',
+      'sum.currency': '货币',
+      'sum.timeline': '期望时间',
+      'sum.subject': 'Agenova 项目咨询'
+    },
+    en: {
+      'meta.title': 'Agenova | AI Products, Automation & Custom Software',
+      'meta.desc': 'Agenova ships AI-powered software and workflows for teams with real business problems — AI products & MVPs, workflow automation, and custom software & internal tools. Every deliverable is human-reviewed.',
+      'og.title': 'Agenova | AI Products, Automation & Custom Software',
+      'og.desc': 'Agenova ships AI-powered software and workflows for teams with real business problems. AI products, workflow automation, custom software. Human-reviewed, end to end.',
+      'og.locale': 'en_US',
+      'ui.navLabel': 'Primary navigation',
+      'ui.footNavLabel': 'Footer navigation',
+      'ui.langLabel': 'Switch language',
+      'ui.brandAria': 'Agenova — home',
+      'ui.menuOpen': 'Open menu',
+      'ui.menuClose': 'Close menu',
+      'ui.deliverable': 'Deliverables',
+      'ui.fit': 'Best for',
+      'ui.notIn': 'Not included',
+      'nav.services': 'Services',
+      'nav.how': 'How it works',
+      'nav.workforce': 'Workforce',
+      'nav.products': 'Products',
+      'nav.contact': 'Contact',
+      'cta.start': 'Start a project',
+      'hero.badge': 'AI Agent Workforce',
+      'hero.title.l1': 'Your AI workforce,',
+      'hero.title.l2': '<em>shipped</em>.',
+      'hero.lede': 'We design and ship AI products, workflow automation, and custom software for teams solving concrete business problems.',
+      'hero.ctaPrimary': 'Start a project',
+      'hero.ctaSecondary': 'See how we work',
+      'strip.agent': 'Agent-native execution',
+      'strip.review': 'Human-reviewed delivery',
+      'strip.workflow': 'Built around your workflow',
+      'svc.title': 'What we ship',
+      'svc.stmt': 'Not sure which engagement fits? Tell us the <em>problem</em>, not the solution.',
+      'svc1.title': 'AI products & MVPs',
+      'svc1.desc': 'Turn a validated idea into a usable, testable product.',
+      'svc1.dlv': 'Product scope, UX, working frontend/backend, deployment handoff.',
+      'svc1.fit': 'You have a clear problem and a working hypothesis, and need a minimal product you can test with real users.',
+      'svc1.notIn': 'Open-ended R&D from an undefined idea; we don\'t decide your product direction for you.',
+      'svc2.title': 'Workflow automation',
+      'svc2.desc': 'Replace repetitive operational work with reliable, reviewable AI-assisted flows.',
+      'svc2.dlv': 'Workflow map, integrations, human review points, operational documentation.',
+      'svc2.fit': 'Your team spends hours on data entry, document handling, or coordination across systems.',
+      'svc2.notIn': 'Unattended black-box automation — every flow keeps human review points.',
+      'svc3.title': 'Custom software & internal tools',
+      'svc3.desc': 'Build focused internal tools and customer-facing software around an existing workflow.',
+      'svc3.dlv': 'Production-ready feature set, QA, handoff and iteration plan.',
+      'svc3.fit': 'Off-the-shelf tools don\'t cover your process and you need software shaped around it.',
+      'svc3.notIn': 'Sprawling platform builds; we ship focused software you can maintain.',
+      'how.title': 'How we work',
+      'how.core': 'AI accelerates the work. Accountability stays <em>human</em>.',
+      'how1.title': 'Scope the work',
+      'how1.desc': 'Define the problem, users, constraints, and success criteria.',
+      'how2.title': 'Set the plan',
+      'how2.desc': 'Turn scope into a prioritized delivery plan.',
+      'how3.title': 'Build in the open',
+      'how3.desc': 'Agents execute; progress, risks, and decisions pending confirmation are synced on a regular cadence.',
+      'how4.title': 'Review what matters',
+      'how4.desc': 'Human review at architecture, quality, and launch decisions.',
+      'how5.title': 'Ship and improve',
+      'how5.desc': 'Launch a usable result, then improve from real use.',
+      'wf.title': 'An AI workforce company',
+      'wf.lead': 'We run software delivery as an AI workforce: agents execute, humans judge and sign off.',
+      'wf.agents': 'Agents execute',
+      'wf.humans': 'Humans own',
+      'wf.ag1': 'Research',
+      'wf.ag2': 'Design',
+      'wf.ag3': 'Development',
+      'wf.ag4': 'Testing',
+      'wf.ag5': 'Documentation',
+      'wf.hm1': 'Scope & priorities',
+      'wf.hm2': 'Architecture decisions',
+      'wf.hm3': 'Quality sign-off',
+      'wf.hm4': 'Final delivery',
+      'wf.assure': 'Every deliverable is <em>human-reviewed</em> before it reaches you.',
+      'prod.status': 'In development',
+      'prod.title': 'Product lab',
+      'prod.stmt': 'Products <em>in development</em>.',
+      'prod.note': 'For now, we prioritize custom engagements.',
+      'prod.cta': 'Tell us about your project',
+      'work.title': 'Selected work',
+      'work.mHigh': 'Highlights',
+      'work.mTech': 'Stack',
+      'work1.name': 'OneFlow (Jarvis)',
+      'work1.type': 'Self-built',
+      'work1.tag': 'A Jarvis-style AI butler driven by a single instruction.',
+      'work1.desc': 'Give one instruction in natural language: the agent decomposes the task, calls tools across multiple steps (function calling), checks its work, and reports back until the task is actually done.',
+      'work1.h1': 'Voice wake-up / offline on-device recognition',
+      'work1.h2': 'Proactive service: scheduled tasks, calendar reminders, contextual care',
+      'work1.h3': 'Grows its own abilities: hears a need → writes its own tool code + tests → validates in a sandbox → one-click confirm to merge and ship',
+      'work1.tech': 'Python / FastAPI · React + TypeScript · Electron desktop shell · On-device speech recognition · Multi-vendor LLM integration',
+      'contact.title': 'Tell us the business problem you need solved.',
+      'contact.desc': 'Share the problem, context, and budget range. We\'ll reply with a practical next step — not a generic sales deck.',
+      'contact.mailHint': 'Prefer email',
+      'contact.nextLabel': 'What happens next',
+      'contact.step1': 'We receive your brief and confirm we understand it.',
+      'contact.step2': 'We assess feasibility within 2 business days.',
+      'contact.step3': 'You get a clear next step — or a straight answer if it\'s not a fit.',
+      'contact.fallback': 'Mail client won\'t open? Write to lin972718993@gmail.com directly',
+      'f.title': 'Project brief',
+      'f.choose': 'Select',
+      'f.name': 'Name',
+      'f.email': 'Work email',
+      'f.company': 'Company / team',
+      'f.what': 'What are you trying to build?',
+      'f.type': 'Project type',
+      'f.budget': 'Budget range',
+      'f.currency': 'Currency',
+      'f.timeline': 'Timeline',
+      'f.errName': 'Please enter your name',
+      'f.errEmail': 'Please enter your work email',
+      'f.errEmailFmt': 'Please enter a valid email address',
+      'f.errWhat': 'Please describe what you\'d like to build',
+      'f.type1': 'AI product & MVP',
+      'f.type2': 'Workflow automation',
+      'f.type3': 'Custom software & internal tools',
+      'f.type4': 'Other',
+      'f.b1': 'Under 5k',
+      'f.b2': '5k – 15k',
+      'f.b3': '15k – 30k',
+      'f.b4': '30k+',
+      'f.b5': 'Need scoping',
+      'f.c1': 'CNY',
+      'f.c2': 'USD',
+      'f.c3': 'Other',
+      'f.t1': 'This month',
+      'f.t2': 'Next quarter',
+      'f.t3': 'Exploring',
+      'f.submit': 'Send project brief',
+      'f.privacy': 'This information is used only to respond to your inquiry.',
+      'f.sending': 'Sending…',
+      'f.ok': 'Received — we reply within 2 business days.',
+      'f.okHint': 'If we need more context, we will confirm by email.',
+      'f.fb': 'The form is coming online soon — please email us instead.',
+      'f.fbHint': 'Use the buttons below to open a draft email, or copy the summary and send it to lin972718993@gmail.com.',
+      'f.err': 'Something went wrong. Please try again.',
+      'f.errHint': 'You can still copy the summary below, or email lin972718993@gmail.com directly.',
+      'f.copy': 'Copy summary',
+      'f.copied': 'Copied',
+      'f.mail': 'Open email draft',
+      'f.back': 'Back to edit',
+      'f.sumAria': 'Project brief summary',
+      'sum.name': 'Name',
+      'sum.email': 'Work email',
+      'sum.company': 'Company / team',
+      'sum.what': 'What you want to build',
+      'sum.type': 'Project type',
+      'sum.budget': 'Budget range',
+      'sum.currency': 'Currency',
+      'sum.timeline': 'Timeline',
+      'sum.subject': 'Project brief — Agenova'
+    }
+  };
+
+  /* keys whose values contain controlled HTML (only <em>), everything else textContent */
+  var HTML_KEYS = { 'hero.title.l2': 1, 'svc.stmt': 1, 'how.core': 1, 'wf.assure': 1, 'prod.stmt': 1 };
+  var state = { lang: 'zh' };
+
+  /* ---------- helpers ---------- */
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+  function reduceMotion() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function saveLang(l) { try { localStorage.setItem(LANG_KEY, l); } catch (e) {} }
+  function loadLang() {
+    try {
+      var v = localStorage.getItem(LANG_KEY);
+      return v === 'en' || v === 'zh' ? v : null;
+    } catch (e) { return null; }
+  }
+
+  function setText(el, value, isHtml) {
+    if (!el) return;
+    if (isHtml) { el.innerHTML = value; }
+    else { el.textContent = value; }
+  }
+
+  function currentCopy() { return copy[state.lang]; }
+
+  function applyLang(lang) {
+    state.lang = lang === 'en' ? 'en' : 'zh';
+    var dict = copy[state.lang];
+    var other = state.lang === 'zh' ? 'en' : 'zh';
+    var htmlEl = document.documentElement;
+
+    htmlEl.lang = state.lang === 'zh' ? 'zh-CN' : 'en';
+
+    /* text / html nodes */
+    $all('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (key && dict[key] !== undefined) setText(el, dict[key], !!HTML_KEYS[key]);
+    });
+
+    /* bilingual suffix: show the other language's value */
+    $all('[data-i18n-suffix]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-suffix');
+      if (key && copy[other][key] !== undefined) setText(el, copy[other][key], false);
+    });
+
+    /* aria-labels */
+    $all('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (key && dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+    });
+
+    /* document-level */
+    document.title = dict['meta.title'];
+    setMeta('description', dict['meta.desc']);
+    setMeta('og:title', dict['og.title']);
+    setMeta('og:description', dict['og.desc']);
+    var ogLocale = $('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', dict['og.locale']);
+
+    /* switcher state */
+    $all('.lang-btn').forEach(function (btn) {
+      var active = btn.getAttribute('data-lang') === state.lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    /* refresh result panel (summary + contextual status) if it is visible */
+    if (!resultBox.hidden) {
+      if (summaryState) renderSummary();
+      if (resultMode) setResultStatus(resultMode);
+    }
+
+    emit('lang', state.lang);
+  }
+
+  function setMeta(attr, value) {
+    var name = attr === 'description' ? 'meta[name="description"]' : 'meta[property="' + attr + '"]';
+    var m = $(name);
+    if (m) m.setAttribute('content', value);
+  }
+
+  var listeners = {};
+  function emit(ev, val) { (listeners[ev] || []).forEach(function (f) { f(val); }); }
+  function on(ev, f) { (listeners[ev] = listeners[ev] || []).push(f); }
+
+  /* ---------- language switching ---------- */
+  function bindLangButtons() {
+    $all('[data-lang]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var l = btn.getAttribute('data-lang');
+        if (l === 'en' || l === 'zh') { applyLang(l); saveLang(l); }
+      });
+    });
+  }
+
+  /* ---------- entrance fail-safe (first screen) ---------- */
+  var revealFirst = $all('[data-rv], .mask-in');
+  function isDone(el) { return el.classList.contains('is-in'); }
+  function finish(el) { if (!isDone(el)) el.classList.add('is-in'); }
+  function finishAll() { revealFirst.forEach(finish); }
+
+  document.addEventListener('animationend', function (e) {
+    var t = e.target;
+    if (t && t.nodeType === 1 && t.classList &&
+        (t.matches('[data-rv]') || t.matches('.mask-in'))) finish(t);
+  });
+
+  function armEntrance() {
+    if (reduceMotion()) { finishAll(); return; }
+    var deadline = performance.now() + 2500;
+    (function tick(now) {
+      var pending = false;
+      revealFirst.forEach(function (el) {
+        if (isDone(el)) return;
+        var cs = window.getComputedStyle(el);
+        if (cs.animationName === 'none') { finish(el); return; }
+        pending = true;
+      });
+      if (pending && now < deadline) requestAnimationFrame(tick);
+      else finishAll();
+    })(performance.now());
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', armEntrance);
+  else armEntrance();
+  setTimeout(function () {
+    var pending = revealFirst.some(function (el) { return !isDone(el); });
+    if (pending) finishAll();
+  }, 2800);
+  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', function (e) {
+    if (e.matches) finishAll();
+  });
+
+  /* ---------- scroll reveal ---------- */
+  function initScrollReveal() {
+    var els = $all('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(finish); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- header shadow + hamburger ---------- */
+  function initHeader() {
+    var onScroll = function () { document.body.classList.toggle('is-scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    var toggle = $('#nav-toggle');
+    var nav = $('#site-nav');
+
+    function openMenu() {
+      document.body.classList.add('menu-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', currentCopy()['ui.menuClose']);
+    }
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', currentCopy()['ui.menuOpen']);
+    }
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        if (document.body.classList.contains('menu-open')) closeMenu(); else openMenu();
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+      $all('a', nav).forEach(function (a) { a.addEventListener('click', closeMenu); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 900) closeMenu(); });
+      on('lang', function () {
+        if (!document.body.classList.contains('menu-open')) return;
+        toggle.setAttribute('aria-label', currentCopy()['ui.menuClose']);
+      });
+    }
+  }
+
+  /* ---------- form ---------- */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var form = $('#brief-form');
+  var resultBox = $('#form-result');
+  var sumBox = $('#sum-text');
+  var statusEl = $('#result-status');
+  var hintEl = $('#result-hint');
+  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+  var summaryState = null;
+  var resultMode = null; /* null | fallback | ok | error */
+
+  function fieldWrap(input) { return input && input.closest('.field'); }
+  function markError(input, key) {
+    var wrap = fieldWrap(input);
+    if (!wrap) return;
+    wrap.classList.add('has-error');
+    input.setAttribute('aria-invalid', 'true');
+    var errEl = wrap.querySelector('.field-err');
+    if (errEl && currentCopy()[key]) setText(errEl, currentCopy()[key], false);
+  }
+  function clearError(input) {
+    var wrap = fieldWrap(input);
+    if (!wrap) return;
+    wrap.classList.remove('has-error');
+    input.removeAttribute('aria-invalid');
+  }
+
+  function getValue(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+  /* 摘要里的下拉值用当前语言的选项文本,避免中英混排(提交给 Formspree 的仍是稳定 value) */
+  function selectedLabel(id) {
+    var sel = document.getElementById(id);
+    if (!sel || sel.selectedIndex < 0) return '';
+    var opt = sel.options[sel.selectedIndex];
+    return opt ? opt.textContent.trim() : sel.value;
+  }
+
+  function collectSummary() {
+    var dict = currentCopy();
+    function fmt(labelKey, val) { return dict[labelKey] + ': ' + (val || '—'); }
+    return [
+      fmt('sum.name', getValue('i-name')),
+      fmt('sum.email', getValue('i-email')),
+      fmt('sum.company', getValue('i-company')),
+      '',
+      dict['sum.what'] + ':',
+      getValue('i-what'),
+      '',
+      fmt('sum.type', selectedLabel('i-type')),
+      fmt('sum.budget', selectedLabel('i-budget')),
+      fmt('sum.currency', selectedLabel('i-currency')),
+      fmt('sum.timeline', selectedLabel('i-timeline'))
+    ].join('\n');
+  }
+
+  function mailtoUrl(summary) {
+    var dict = currentCopy();
+    var subject = dict['sum.subject'];
+    return 'mailto:' + CONTACT_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(summary);
+  }
+
+  function renderSummary() {
+    if (!summaryState) return;
+    sumBox.value = summaryState;
+  }
+
+  function scrollToResult() {
+    setTimeout(function () {
+      resultBox.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'nearest' });
+    }, 60);
+  }
+
+  /* 结果面板按状态显示不同文案(成功 / 占位兜底 / 失败) */
+  function setResultStatus(mode) {
+    resultMode = mode;
+    if (!resultBox) return;
+    resultBox.setAttribute('data-mode', mode);
+    var dict = currentCopy();
+    var statusKey = mode === 'ok' ? 'f.ok' : mode === 'error' ? 'f.err' : 'f.fb';
+    var hintKey = mode === 'ok' ? 'f.okHint' : mode === 'error' ? 'f.errHint' : 'f.fbHint';
+    if (statusEl) setText(statusEl, dict[statusKey], false);
+    if (hintEl) setText(hintEl, dict[hintKey], false);
+  }
+
+  function setSending(on) {
+    if (!submitBtn) return;
+    submitBtn.disabled = on;
+    setText(submitBtn, on ? currentCopy()['f.sending'] : currentCopy()['f.submit'], false);
+  }
+
+  function sendToEndpoint(cb) {
+    var fd = new FormData(form);
+    var dict = currentCopy();
+    var subject = form.querySelector('input[name="_subject"]');
+    var reply = form.querySelector('input[name="_replyto"]');
+    if (reply) reply.value = getValue('i-email');
+    if (subject) subject.value = dict['sum.subject'];
+    fetch(FORM_ENDPOINT, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+      .then(function (res) { cb(res.ok ? 'ok' : 'error'); })
+      .catch(function () { cb('error'); });
+  }
+
+  function validate() {
+    var ok = true;
+    var name = getValue('i-name');
+    var email = getValue('i-email');
+    var what = getValue('i-what');
+
+    if (!name) { markError($('#i-name'), 'f.errName'); ok = false; } else clearError($('#i-name'));
+    if (!email) { markError($('#i-email'), 'f.errEmail'); ok = false; }
+    else if (!EMAIL_RE.test(email)) { markError($('#i-email'), 'f.errEmailFmt'); ok = false; }
+    else clearError($('#i-email'));
+    if (!what) { markError($('#i-what'), 'f.errWhat'); ok = false; } else clearError($('#i-what'));
+
+    if (!ok) {
+      var firstBad = form.querySelector('.has-error .ctl');
+      if (firstBad) firstBad.focus();
+    }
+    return ok;
+  }
+
+  function submitHandler(e) {
+    e.preventDefault();
+    if (!validate()) return;
+
+    summaryState = collectSummary();
+
+    /* 仍是占位 endpoint:不假称"已提交",直接进入邮件兜底,不报错 */
+    if (FORM_IS_PLACEHOLDER) {
+      resultBox.hidden = false;
+      renderSummary();
+      setResultStatus('fallback');
+      scrollToResult();
+      return;
+    }
+
+    setSending(true);
+    sendToEndpoint(function (mode) {
+      setSending(false);
+      resultBox.hidden = false;
+      renderSummary();
+      setResultStatus(mode);
+      scrollToResult();
+    });
+  }
+
+  function initForm() {
+    if (!form) return;
+    form.addEventListener('submit', submitHandler);
+    ['i-name', 'i-email', 'i-what'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () { clearError(el); });
+    });
+
+    $('#btn-copy').addEventListener('click', function () {
+      var btn = $('#btn-copy');
+      var text = sumBox.value;
+      function fallback() {
+        sumBox.focus(); sumBox.select();
+        try { document.execCommand('copy'); } catch (e) {}
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flashCopied(btn); },
+          function () { fallback(); flashCopied(btn); }
+        );
+      } else { fallback(); flashCopied(btn); }
+    });
+
+    $('#btn-mail').addEventListener('click', function () {
+      if (!summaryState) return;
+      try { window.location.href = mailtoUrl(summaryState); } catch (err) {}
+    });
+
+    $('#btn-edit').addEventListener('click', function () {
+      resultBox.hidden = true;
+      summaryState = null;
+      resultMode = null;
+      resultBox.removeAttribute('data-mode');
+      form.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+    });
+  }
+
+  function flashCopied(btn) {
+    var dict = currentCopy();
+    var original = dict['f.copy'];
+    btn.textContent = dict['f.copied'];
+    setTimeout(function () { btn.textContent = original; }, 1600);
+  }
+
+  /* ---------- init ---------- */
+  function boot() {
+    bindLangButtons();
+    initHeader();
+    initScrollReveal();
+    initForm();
+
+    var saved = loadLang();
+    if (saved) applyLang(saved);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+
+  /* debug handle for tests */
+  window.__agenova = { state: state, applyLang: applyLang, copy: copy, getLang: function () { return state.lang; } };
+})();
+</script>
+</body>
+</html>
