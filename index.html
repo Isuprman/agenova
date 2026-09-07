@@ -356,27 +356,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 .work-bullets li{ display:flex; align-items:baseline; gap:10px }
 .work-bullets li::before{ content:"—"; flex:none; color:var(--text-3) }
 
-/* Product lab — centered panel */
-.lab-panel{
-  border:1px solid var(--line-soft); border-radius:28px; text-align:center;
-  background:radial-gradient(120% 150% at 50% 0%,rgba(255,255,255,.055),transparent 62%);
-  padding:clamp(64px,10vw,130px) clamp(20px,4vw,60px);
-}
-.pill{
-  display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border:1px solid var(--line);
-  border-radius:999px; background:rgba(255,255,255,.045); color:var(--text-2);
-  font-size:12.5px; font-weight:600; letter-spacing:.08em;
-}
-.pill::before{ content:""; width:5px; height:5px; border-radius:50%; background:#fff; opacity:.75 }
-.lab-title{ margin:34px 0 0; font-size:var(--h2-fs); font-weight:600 }
-.lab-stmt{
-  margin:26px auto 0; max-width:760px; font-size:clamp(1.7rem,calc(1.1rem + 1.6vw),3rem);
-  font-weight:600; line-height:1.25; letter-spacing:-.03em;
-}
-.lab-stmt em{ color:var(--muted) }
-.lab-note{ margin:20px auto 0; color:var(--text-3); font-size:15.5px }
-.lab-panel .btn{ margin-top:40px }
-
 /* Contact */
 .contact-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(40px,6vw,90px); margin-top:clamp(48px,7vh,76px); align-items:start }
 .c-left{ padding-top:8px }
@@ -863,14 +842,43 @@ select.ctl option{ background:#000; color:#fff }
   <section id="products" class="sec sec-pad" aria-labelledby="prod-title">
     <div class="wrap">
       <div class="sec-inner">
-        <div class="lab-panel reveal">
-          <span class="pill" data-i18n="prod.status">已上线</span>
-          <h2 class="lab-title" id="prod-title" data-i18n="prod.title">产品实验室</h2>
-          <p class="lab-stmt" data-i18n="prod.stmt">首个自研产品已上线：<em>Google Feed 价格检查</em></p>
-          <!-- 正式入口 feedcheck.wmbsxs.top(已激活 2026-09-07);DNS token = /tmp/cf_token_dns.txt -->
-          <a class="btn btn--solid" href="https://feedcheck.wmbsxs.top" target="_blank" rel="noopener" data-i18n="prod.cta">打开 Google Feed 价格检查 ↗</a>
-          <p class="lab-note" data-i18n="prod.note">把商品页当前价格与 Google 商品 Feed 逐项比对，不一致直接标出，并提示先改哪里。免费使用，无需注册。</p>
+        <div class="sec-head reveal">
+          <h2 class="sec-title" id="prod-title" data-i18n="prod.title">产品实验室</h2>
         </div>
+
+        <ol class="work-list">
+          <li class="work reveal">
+            <span class="work-no" aria-hidden="true">02</span>
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-name" data-i18n="prod1.name">Google Feed 价格检查</h3>
+                <span class="work-pill" data-i18n="prod.status">已上线</span>
+              </div>
+              <p class="work-tag" data-i18n="prod1.tag">商品页与 Google Feed 价格不一致，一眼查清</p>
+              <p class="work-desc" data-i18n="prod1.desc">给维护 Google 购物 Feed、投购物广告的独立站团队：上传前花几秒自查一遍，把商品页当前价格与 Google 商品 Feed 逐项比对，price、sale_price、availability 不一致的商品与字段直接标出，并提示该先改哪一处——从源头避免价格不一致拖累广告审核与曝光。免费使用，无需注册。</p>
+
+              <dl class="work-meta">
+                <div>
+                  <dt data-i18n="work.mHigh">亮点</dt>
+                  <dd>
+                    <ul class="work-bullets">
+                      <li data-i18n="prod1.h1">同时比对 price、sale_price 与 availability 差异</li>
+                      <li data-i18n="prod1.h2">针对每处差异给出 JSON-LD 修复建议</li>
+                      <li data-i18n="prod1.h3">检测报告 24 小时内可回看，方便复查</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div>
+                  <dt data-i18n="prod.mEntry">入口</dt>
+                  <dd>
+                    <!-- 正式入口 feedcheck.wmbsxs.top(已激活 2026-09-07);DNS token = /tmp/cf_token_dns.txt -->
+                    <a class="btn btn--solid btn--lg" href="https://feedcheck.wmbsxs.top" target="_blank" rel="noopener" data-i18n="prod.cta">打开 Google Feed 价格检查 ↗</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -1131,10 +1139,15 @@ select.ctl option{ background:#000; color:#fff }
       'wf.hm3': '质量验收',
       'wf.hm4': '最终交付',
       'wf.assure': '在你收到之前，每一份交付都经过<em>人工审核</em>。',
-      'prod.status': '已上线',
       'prod.title': '产品实验室',
-      'prod.stmt': '首个自研产品已上线：<em>Google Feed 价格检查</em>',
-      'prod.note': '把商品页当前价格与 Google 商品 Feed 逐项比对，不一致直接标出，并提示先改哪里。免费使用，无需注册。',
+      'prod.mEntry': '入口',
+      'prod.status': '已上线',
+      'prod1.name': 'Google Feed 价格检查',
+      'prod1.tag': '商品页与 Google Feed 价格不一致，一眼查清',
+      'prod1.desc': '给维护 Google 购物 Feed、投购物广告的独立站团队：上传前花几秒自查一遍，把商品页当前价格与 Google 商品 Feed 逐项比对，price、sale_price、availability 不一致的商品与字段直接标出，并提示该先改哪一处——从源头避免价格不一致拖累广告审核与曝光。免费使用，无需注册。',
+      'prod1.h1': '同时比对 price、sale_price 与 availability 差异',
+      'prod1.h2': '针对每处差异给出 JSON-LD 修复建议',
+      'prod1.h3': '检测报告 24 小时内可回看，方便复查',
       'prod.cta': '打开 Google Feed 价格检查 ↗',
       'work.title': '代表项目',
       'work.mHigh': '亮点',
@@ -1281,10 +1294,15 @@ select.ctl option{ background:#000; color:#fff }
       'wf.hm3': 'Quality sign-off',
       'wf.hm4': 'Final delivery',
       'wf.assure': 'Every deliverable is <em>human-reviewed</em> before it reaches you.',
-      'prod.status': 'Live',
       'prod.title': 'Product lab',
-      'prod.stmt': 'First product from the lab is live: <em>Google Feed Price Check</em>',
-      'prod.note': 'Compares current product-page prices against your Google Shopping feed line by line, flags mismatches, and shows what to fix first. Free to use, no sign-up.',
+      'prod.mEntry': 'Access',
+      'prod.status': 'Live',
+      'prod1.name': 'Google Feed Price Check',
+      'prod1.tag': 'Product pages and Google Feed out of sync? Spot it at a glance.',
+      'prod1.desc': 'For independent-store teams running Google Shopping: paste in your feed and it checks each entry against the live product page, flagging mismatches in price, sale_price, and availability and telling you which to fix first — so inconsistent pricing never quietly costs you ad approvals and impressions. Free to use, no sign-up.',
+      'prod1.h1': 'Flags mismatches in price, sale_price, and availability',
+      'prod1.h2': 'Suggests a JSON-LD fix for each mismatch',
+      'prod1.h3': 'Your report stays viewable for 24 hours, easy to re-check',
       'prod.cta': 'Open Google Feed Price Check ↗',
       'work.title': 'Selected work',
       'work.mHigh': 'Highlights',
@@ -1361,7 +1379,7 @@ select.ctl option{ background:#000; color:#fff }
   };
 
   /* keys whose values contain controlled HTML (only <em>), everything else textContent */
-  var HTML_KEYS = { 'hero.title.l2': 1, 'svc.stmt': 1, 'how.core': 1, 'wf.assure': 1, 'prod.stmt': 1 };
+  var HTML_KEYS = { 'hero.title.l2': 1, 'svc.stmt': 1, 'how.core': 1, 'wf.assure': 1 };
   var state = { lang: 'zh' };
 
   /* ---------- helpers ---------- */
