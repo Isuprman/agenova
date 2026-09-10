@@ -357,9 +357,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 .work-bullets li::before{ content:"—"; flex:none; color:var(--text-3) }
 
 /* Contact */
-.contact-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(40px,6vw,90px); margin-top:clamp(48px,7vh,76px); align-items:start }
-.c-left{ padding-top:8px }
-.c-desc{ margin:22px 0 0; max-width:46ch; color:var(--muted); font-size:16px; line-height:1.75 }
 .c-mail{
   display:inline-flex; align-items:center; gap:10px; margin-top:36px; font-size:16px; font-weight:500;
   text-decoration:none; border-bottom:1px solid rgba(255,255,255,.3); padding-bottom:3px;
@@ -367,76 +364,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 }
 .c-mail:hover{ border-color:#fff; color:#fff }
 .c-mail small{ color:var(--text-3); font-weight:400 }
-
-/* Left rail — "what happens next" mini timeline */
-.c-next{ margin-top:clamp(40px,5.5vh,60px) }
-.c-next-label{
-  display:flex; align-items:center; gap:14px; margin:0;
-  font-size:11.5px; font-weight:600; letter-spacing:.14em; color:var(--text-3); text-transform:uppercase;
-}
-.c-next-label::after{ content:""; flex:1; height:1px; background:var(--line-soft) }
-.c-steps{ margin:20px 0 0 }
-.c-step{
-  display:grid; grid-template-columns:30px 1fr; gap:10px; align-items:baseline;
-  padding:14px 0; border-top:1px solid var(--line-soft);
-}
-.c-step:last-child{ border-bottom:1px solid var(--line-soft) }
-.c-step-no{ font-size:12px; font-weight:600; color:var(--text-3); font-variant-numeric:tabular-nums }
-.c-step p{ margin:0; color:var(--text-2); font-size:14.5px; line-height:1.6 }
-
-/* Form */
-.form-title{ margin:0; font-size:var(--h3-fs); font-weight:600 }
-.form-fields{ display:grid; grid-template-columns:1fr 1fr; gap:22px 20px; margin-top:30px }
-.field{ display:flex; flex-direction:column; gap:8px }
-.field--full{ grid-column:1 / -1 }
-.field-label{ font-size:12.5px; font-weight:500; color:rgba(255,255,255,.6); letter-spacing:.02em }
-.req{ color:rgba(255,255,255,.4) }
-.ctl{
-  width:100%; height:48px; padding:0 14px; border-radius:12px; border:1px solid var(--line);
-  background:rgba(255,255,255,.045); color:#fff; font-size:15px; font-family:inherit;
-  transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
-}
-textarea.ctl{ height:auto; min-height:118px; padding:13px 14px; resize:vertical; line-height:1.55 }
-.ctl::placeholder{ color:rgba(255,255,255,.28) }
-.ctl:hover{ border-color:rgba(255,255,255,.22) }
-.ctl:focus{ outline:none; border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); box-shadow:0 0 0 3px rgba(255,255,255,.06) }
-select.ctl{
-  appearance:none; -webkit-appearance:none; padding-right:38px; cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ffffff' stroke-opacity='.55' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat; background-position:right 15px center;
-}
-select.ctl option{ background:#000; color:#fff }
-.ctl:disabled{ opacity:.45; cursor:not-allowed }
-.field-err{ display:none; color:#ff9d9d; font-size:12.5px; line-height:1.4 }
-.field.has-error .ctl{ border-color:rgba(255,130,130,.65) }
-.field.has-error .field-err{ display:block }
-.form-actions{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:28px }
-.form-note{ margin:16px 0 0; color:var(--text-3); font-size:13.5px }
-
-/* result */
-.result{
-  margin-top:34px; padding:clamp(22px,3vw,30px); border:1px solid var(--line);
-  border-radius:18px; background:rgba(255,255,255,.025);
-}
-.result-status{ display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600 }
-.result-status::before{
-  content:""; width:7px; height:7px; flex:none; border-radius:50%; background:#fff;
-}
-.result-hint{ margin:10px 0 0; color:var(--text-3); font-size:13.5px; line-height:1.6; max-width:62ch }
-.sum-ctl{
-  width:100%; margin-top:18px; padding:14px; border-radius:12px; border:1px solid var(--line-soft);
-  background:#000; color:var(--text-2); font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
-  white-space:pre-wrap; resize:vertical; min-height:200px;
-}
-.sum-ctl:focus{ outline:none; border-color:rgba(255,255,255,.4) }
-.result-actions{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:18px }
-.btn--link{ background:none; color:var(--text-2); text-decoration:underline; text-underline-offset:4px; padding:4px 2px; font-size:13.5px }
-.btn--link:hover{ color:#fff }
-
-/* form result — success state keeps only status + "back to edit" */
-.result[data-mode="ok"] .sum-ctl,
-.result[data-mode="ok"] #btn-copy,
-.result[data-mode="ok"] #btn-mail{ display:none }
 
 /* Footer */
 .site-footer{ border-top:1px solid var(--line) }
@@ -498,7 +425,6 @@ select.ctl option{ background:#000; color:#fff }
   .wf-grid{ grid-template-columns:1fr }
   .wf-col:first-child{ padding-left:0 }
   .wf-col + .wf-col{ border-left:0; border-top:1px solid var(--line-soft); padding-left:0 }
-  .contact-grid{ grid-template-columns:1fr }
   .footer-grid{ grid-template-columns:1fr; align-items:start }
   .foot-end{ align-items:flex-start }
 }
@@ -509,7 +435,6 @@ select.ctl option{ background:#000; color:#fff }
   .cta-row{ flex-direction:column; align-items:stretch; width:min(100%,350px); margin-left:auto; margin-right:auto }
   .cta-row .btn{ width:100% }
   .stat{ font-size:14px; line-height:1.35 }
-  .form-fields{ grid-template-columns:1fr }
 }
 @media (max-width:380px){
   .display{ font-size:clamp(1.95rem,calc(.85rem + 6vw),3rem) }
@@ -572,7 +497,7 @@ select.ctl option{ background:#000; color:#fff }
         <li><a href="#workforce" data-i18n="nav.workforce">AI 员工</a></li>
         <li><a href="#products" data-i18n="nav.products">产品</a></li>
         <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
-        <li class="nav-cta"><a class="btn btn--solid btn--lg" href="#contact" data-i18n="cta.start">启动项目</a></li>
+        <li class="nav-cta"><a class="btn btn--solid btn--lg" href="#contact" data-i18n="cta.start">联系我们</a></li>
       </ul>
       <div class="menu-lang">
         <div class="lang-switch" role="group" data-i18n-aria="ui.langLabel" aria-label="切换语言 / Switch language">
@@ -587,7 +512,7 @@ select.ctl option{ background:#000; color:#fff }
         <button class="lang-btn is-active" type="button" data-lang="zh" aria-pressed="true" aria-label="Chinese">中</button>
         <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
       </div>
-      <a class="btn btn--sm btn--solid" href="#contact" data-i18n="cta.start">启动项目</a>
+      <a class="btn btn--sm btn--solid" href="#contact" data-i18n="cta.start">联系我们</a>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria="ui.menuOpen" aria-label="打开菜单">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
           <path d="M4 8h16M4 12h16M4 16h16"/>
@@ -620,7 +545,7 @@ select.ctl option{ background:#000; color:#fff }
       <p class="lede d4" data-rv data-i18n="hero.lede">我们为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。</p>
 
       <div class="cta-row d5" data-rv>
-        <a class="btn btn--solid btn--lg" href="#contact" data-i18n="hero.ctaPrimary">启动项目</a>
+        <a class="btn btn--solid btn--lg" href="#contact" data-i18n="hero.ctaPrimary">联系我们</a>
         <a class="btn btn--ghost btn--lg" href="#how-it-works" data-i18n="hero.ctaSecondary">了解合作方式</a>
       </div>
 
@@ -883,134 +808,15 @@ select.ctl option{ background:#000; color:#fff }
     </div>
   </section>
 
-  <!-- ===================== Start a project ===================== -->
+  <!-- ===================== Contact ===================== -->
   <section id="contact" class="sec sec-pad" aria-labelledby="contact-title">
     <div class="wrap">
       <div class="sec-inner">
 
         <div class="sec-head reveal">
-          <h2 class="sec-title" id="contact-title" data-i18n="contact.title">告诉我们要解决的业务问题。</h2>
-        </div>
-
-        <div class="contact-grid">
-          <div class="c-left reveal">
-            <p class="c-desc" data-i18n="contact.desc">告诉我们你的问题、现状与预算范围。我们会回复一个可执行的下一步，而不是一份套话式销售材料。</p>
-
-            <div class="c-next">
-              <p class="c-next-label" data-i18n="contact.nextLabel">提交后会发生什么</p>
-              <ol class="c-steps">
-                <li class="c-step">
-                  <span class="c-step-no" aria-hidden="true">01</span>
-                  <p data-i18n="contact.step1">收到需求，我们确认理解无误。</p>
-                </li>
-                <li class="c-step">
-                  <span class="c-step-no" aria-hidden="true">02</span>
-                  <p data-i18n="contact.step2">2 个工作日内完成可行性评估。</p>
-                </li>
-                <li class="c-step">
-                  <span class="c-step-no" aria-hidden="true">03</span>
-                  <p data-i18n="contact.step3">回复明确的下一步；不适合会直说。</p>
-                </li>
-              </ol>
-            </div>
-
-            <a class="c-mail" href="mailto:lin972718993@gmail.com">lin972718993@gmail.com<small data-i18n="contact.mailHint">直接邮件</small></a>
-          </div>
-
-          <div class="reveal">
-            <h3 class="form-title" data-i18n="f.title">项目需求简述</h3>
-
-            <form class="form-fields" id="brief-form" action="https://formspree.io/f/mrpgkrqr" method="post">
-              <!-- 与脚本内 FORM_ENDPOINT 同步:上线前把两处 YOUR_FORM_ID 替换为真实 Form ID -->
-                            <input type="hidden" name="_subject">
-              <input type="hidden" name="_replyto">
-
-              <div class="field" id="f-name">
-                <label class="field-label" for="i-name" data-i18n="f.name">姓名 <span class="req" aria-hidden="true">*</span></label>
-                <input class="ctl" id="i-name" name="name" type="text" autocomplete="name" required>
-                <span class="field-err" data-i18n="f.errName" role="alert">请填写姓名</span>
-              </div>
-
-              <div class="field" id="f-email">
-                <label class="field-label" for="i-email" data-i18n="f.email">工作邮箱 <span class="req" aria-hidden="true">*</span></label>
-                <input class="ctl" id="i-email" name="email" type="email" autocomplete="email" required>
-                <span class="field-err" data-i18n="f.errEmail" role="alert">请填写工作邮箱</span>
-              </div>
-
-              <div class="field field--full" id="f-company">
-                <label class="field-label" for="i-company" data-i18n="f.company">公司 / 团队</label>
-                <input class="ctl" id="i-company" name="company" type="text" autocomplete="organization">
-              </div>
-
-              <div class="field field--full" id="f-what">
-                <label class="field-label" for="i-what" data-i18n="f.what">想做什么？<span class="req" aria-hidden="true">*</span></label>
-                <textarea class="ctl" id="i-what" name="what" required></textarea>
-                <span class="field-err" data-i18n="f.errWhat" role="alert">请简单描述你想做什么</span>
-              </div>
-
-              <div class="field" id="f-type">
-                <label class="field-label" for="i-type" data-i18n="f.type">项目类型</label>
-                <select class="ctl" id="i-type" name="type">
-                  <option value="" disabled selected data-i18n="f.choose">请选择</option>
-                  <option value="AI product &amp; MVP" data-i18n="f.type1">AI 产品与 MVP</option>
-                  <option value="Workflow automation" data-i18n="f.type2">业务流程自动化</option>
-                  <option value="Custom software" data-i18n="f.type3">定制软件与内部工具</option>
-                  <option value="Other" data-i18n="f.type4">其他</option>
-                </select>
-              </div>
-
-              <div class="field" id="f-budget">
-                <label class="field-label" for="i-budget" data-i18n="f.budget">预算区间</label>
-                <select class="ctl" id="i-budget" name="budget">
-                  <option value="" disabled selected data-i18n="f.choose">请选择</option>
-                  <option value="Under 5k" data-i18n="f.b1">5k 以下</option>
-                  <option value="5k - 15k" data-i18n="f.b2">5k – 15k</option>
-                  <option value="15k - 30k" data-i18n="f.b3">15k – 30k</option>
-                  <option value="30k+" data-i18n="f.b4">30k 以上</option>
-                  <option value="Need scoping" data-i18n="f.b5">需要评估</option>
-                </select>
-              </div>
-
-              <div class="field" id="f-currency">
-                <label class="field-label" for="i-currency" data-i18n="f.currency">货币</label>
-                <select class="ctl" id="i-currency" name="currency">
-                  <option value="CNY" selected data-i18n="f.c1">CNY</option>
-                  <option value="USD" data-i18n="f.c2">USD</option>
-                  <option value="Other" data-i18n="f.c3">Other</option>
-                </select>
-              </div>
-
-              <div class="field" id="f-timeline">
-                <label class="field-label" for="i-timeline" data-i18n="f.timeline">期望时间</label>
-                <select class="ctl" id="i-timeline" name="timeline">
-                  <option value="" disabled selected data-i18n="f.choose">请选择</option>
-                  <option value="This month" data-i18n="f.t1">本月</option>
-                  <option value="Next quarter" data-i18n="f.t2">下季度</option>
-                  <option value="Exploring" data-i18n="f.t3">还在探索</option>
-                </select>
-              </div>
-
-              <div class="form-actions field--full">
-                <button class="btn btn--solid btn--lg" type="submit" data-i18n="f.submit">发送项目需求</button>
-              </div>
-
-            </form>
-
-            <p class="form-note field--full" data-i18n="f.privacy">这些信息仅用于处理你的咨询。</p>
-            <p class="form-note" data-i18n="contact.fallback">邮件客户端无法打开？可直接发送到 <a href="mailto:lin972718993@gmail.com" style="color:var(--text-2)">lin972718993@gmail.com</a></p>
-
-            <div class="result" id="form-result" hidden>
-              <p class="result-status" id="result-status" role="status"></p>
-              <p class="result-hint" id="result-hint"></p>
-              <textarea class="sum-ctl" id="sum-text" readonly data-i18n-aria="f.sumAria" aria-label="项目需求摘要"></textarea>
-              <div class="result-actions">
-                <button class="btn btn--sm btn--ghost" id="btn-copy" type="button" data-i18n="f.copy">复制摘要</button>
-                <button class="btn btn--sm btn--solid" id="btn-mail" type="button" data-i18n="f.mail">打开邮件草稿</button>
-                <button class="btn--link" id="btn-edit" type="button" data-i18n="f.back">返回修改</button>
-              </div>
-            </div>
-
-          </div>
+          <h2 class="sec-title" id="contact-title" data-i18n="contact.title">联系我们</h2>
+          <p class="sec-lede" data-i18n="contact.desc">有产品使用问题或合作想法，欢迎邮件联系我们。</p>
+          <a class="c-mail" href="mailto:lin972718993@gmail.com">lin972718993@gmail.com<small data-i18n="contact.mailHint">直接邮件</small></a>
         </div>
 
       </div>
@@ -1058,10 +864,6 @@ select.ctl option{ background:#000; color:#fff }
 (function () {
   'use strict';
 
-  /* Formspree 真实收件:上线前把 YOUR_FORM_ID 替换为真实 Form ID(action 属性需同步) */
-  var FORM_ENDPOINT = 'https://formspree.io/f/mrpgkrqr';
-  var FORM_IS_PLACEHOLDER = FORM_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1;
-  var CONTACT_EMAIL = 'lin972718993@gmail.com';
   var LANG_KEY = 'agenova.lang';
 
   /* ---------- copy dict: keys shared by zh/en; zh is the no-JS default ---------- */
@@ -1086,12 +888,12 @@ select.ctl option{ background:#000; color:#fff }
       'nav.workforce': 'AI 员工',
       'nav.products': '产品',
       'nav.contact': '联系',
-      'cta.start': '启动项目',
+      'cta.start': '联系我们',
       'hero.badge': 'AI 员工队伍',
       'hero.title.l1': '你的 AI 员工队伍，',
       'hero.title.l2': '<em>交付成果。</em>',
       'hero.lede': '我们为有真实业务问题的团队设计、开发并交付 AI 驱动的软件与工作流。',
-      'hero.ctaPrimary': '启动项目',
+      'hero.ctaPrimary': '联系我们',
       'hero.ctaSecondary': '了解合作方式',
       'strip.agent': 'AI Agent 执行',
       'strip.review': '人工审核交付',
@@ -1160,66 +962,9 @@ select.ctl option{ background:#000; color:#fff }
       'work1.h2': '主动服务：定时任务、日程提醒、情景关怀',
       'work1.h3': '能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线',
       'work1.tech': 'Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入',
-      'contact.title': '告诉我们要解决的业务问题。',
-      'contact.desc': '告诉我们你的问题、现状与预算范围。我们会回复一个可执行的下一步，而不是一份套话式销售材料。',
-      'contact.mailHint': '直接邮件',
-      'contact.nextLabel': '提交后会发生什么',
-      'contact.step1': '收到需求，我们确认理解无误。',
-      'contact.step2': '2 个工作日内完成可行性评估。',
-      'contact.step3': '回复明确的下一步；不适合会直说。',
-      'contact.fallback': '邮件客户端无法打开？可直接发送到 lin972718993@gmail.com',
-      'f.title': '项目需求简述',
-      'f.choose': '请选择',
-      'f.name': '姓名',
-      'f.email': '工作邮箱',
-      'f.company': '公司 / 团队',
-      'f.what': '想做什么？',
-      'f.type': '项目类型',
-      'f.budget': '预算区间',
-      'f.currency': '货币',
-      'f.timeline': '期望时间',
-      'f.errName': '请填写姓名',
-      'f.errEmail': '请填写工作邮箱',
-      'f.errEmailFmt': '请输入有效的邮箱地址',
-      'f.errWhat': '请简单描述你想做什么',
-      'f.type1': 'AI 产品与 MVP',
-      'f.type2': '业务流程自动化',
-      'f.type3': '定制软件与内部工具',
-      'f.type4': '其他',
-      'f.b1': '5k 以下',
-      'f.b2': '5k – 15k',
-      'f.b3': '15k – 30k',
-      'f.b4': '30k 以上',
-      'f.b5': '需要评估',
-      'f.c1': 'CNY',
-      'f.c2': 'USD',
-      'f.c3': 'Other',
-      'f.t1': '本月',
-      'f.t2': '下季度',
-      'f.t3': '还在探索',
-      'f.submit': '发送项目需求',
-      'f.privacy': '这些信息仅用于处理你的咨询。',
-      'f.sending': '正在提交…',
-      'f.ok': '已收到，我们会在 2 个工作日内回复。',
-      'f.okHint': '若需补充背景，我们会通过邮件与你确认。',
-      'f.fb': '表单即将可用，请邮件联系 lin972718993@gmail.com。',
-      'f.fbHint': '请用下方按钮生成邮件草稿，或复制摘要发送至 lin972718993@gmail.com。',
-      'f.err': '发送失败，请稍后重试。',
-      'f.errHint': '你仍可复制下方摘要，或直接发送邮件至 lin972718993@gmail.com。',
-      'f.copy': '复制摘要',
-      'f.copied': '已复制',
-      'f.mail': '打开邮件草稿',
-      'f.back': '返回修改',
-      'f.sumAria': '项目需求摘要',
-      'sum.name': '姓名',
-      'sum.email': '工作邮箱',
-      'sum.company': '公司 / 团队',
-      'sum.what': '想做什么',
-      'sum.type': '项目类型',
-      'sum.budget': '预算区间',
-      'sum.currency': '货币',
-      'sum.timeline': '期望时间',
-      'sum.subject': 'Agenova 项目咨询'
+      'contact.title': '联系我们',
+      'contact.desc': '有产品使用问题或合作想法，欢迎邮件联系我们。',
+      'contact.mailHint': '直接邮件'
     },
     en: {
       'meta.title': 'Agenova | AI Products, Automation & Custom Software',
@@ -1241,12 +986,12 @@ select.ctl option{ background:#000; color:#fff }
       'nav.workforce': 'Workforce',
       'nav.products': 'Products',
       'nav.contact': 'Contact',
-      'cta.start': 'Start a project',
+      'cta.start': 'Get in touch',
       'hero.badge': 'AI Agent Workforce',
       'hero.title.l1': 'Your AI workforce,',
       'hero.title.l2': '<em>shipped</em>.',
       'hero.lede': 'We design and ship AI products, workflow automation, and custom software for teams solving concrete business problems.',
-      'hero.ctaPrimary': 'Start a project',
+      'hero.ctaPrimary': 'Get in touch',
       'hero.ctaSecondary': 'See how we work',
       'strip.agent': 'Agent-native execution',
       'strip.review': 'Human-reviewed delivery',
@@ -1315,66 +1060,9 @@ select.ctl option{ background:#000; color:#fff }
       'work1.h2': 'Proactive service: scheduled tasks, calendar reminders, contextual care',
       'work1.h3': 'Grows its own abilities: hears a need → writes its own tool code + tests → validates in a sandbox → one-click confirm to merge and ship',
       'work1.tech': 'Python / FastAPI · React + TypeScript · Electron desktop shell · On-device speech recognition · Multi-vendor LLM integration',
-      'contact.title': 'Tell us the business problem you need solved.',
-      'contact.desc': 'Share the problem, context, and budget range. We\'ll reply with a practical next step — not a generic sales deck.',
-      'contact.mailHint': 'Prefer email',
-      'contact.nextLabel': 'What happens next',
-      'contact.step1': 'We receive your brief and confirm we understand it.',
-      'contact.step2': 'We assess feasibility within 2 business days.',
-      'contact.step3': 'You get a clear next step — or a straight answer if it\'s not a fit.',
-      'contact.fallback': 'Mail client won\'t open? Write to lin972718993@gmail.com directly',
-      'f.title': 'Project brief',
-      'f.choose': 'Select',
-      'f.name': 'Name',
-      'f.email': 'Work email',
-      'f.company': 'Company / team',
-      'f.what': 'What are you trying to build?',
-      'f.type': 'Project type',
-      'f.budget': 'Budget range',
-      'f.currency': 'Currency',
-      'f.timeline': 'Timeline',
-      'f.errName': 'Please enter your name',
-      'f.errEmail': 'Please enter your work email',
-      'f.errEmailFmt': 'Please enter a valid email address',
-      'f.errWhat': 'Please describe what you\'d like to build',
-      'f.type1': 'AI product & MVP',
-      'f.type2': 'Workflow automation',
-      'f.type3': 'Custom software & internal tools',
-      'f.type4': 'Other',
-      'f.b1': 'Under 5k',
-      'f.b2': '5k – 15k',
-      'f.b3': '15k – 30k',
-      'f.b4': '30k+',
-      'f.b5': 'Need scoping',
-      'f.c1': 'CNY',
-      'f.c2': 'USD',
-      'f.c3': 'Other',
-      'f.t1': 'This month',
-      'f.t2': 'Next quarter',
-      'f.t3': 'Exploring',
-      'f.submit': 'Send project brief',
-      'f.privacy': 'This information is used only to respond to your inquiry.',
-      'f.sending': 'Sending…',
-      'f.ok': 'Received — we reply within 2 business days.',
-      'f.okHint': 'If we need more context, we will confirm by email.',
-      'f.fb': 'The form is coming online soon — please email us instead.',
-      'f.fbHint': 'Use the buttons below to open a draft email, or copy the summary and send it to lin972718993@gmail.com.',
-      'f.err': 'Something went wrong. Please try again.',
-      'f.errHint': 'You can still copy the summary below, or email lin972718993@gmail.com directly.',
-      'f.copy': 'Copy summary',
-      'f.copied': 'Copied',
-      'f.mail': 'Open email draft',
-      'f.back': 'Back to edit',
-      'f.sumAria': 'Project brief summary',
-      'sum.name': 'Name',
-      'sum.email': 'Work email',
-      'sum.company': 'Company / team',
-      'sum.what': 'What you want to build',
-      'sum.type': 'Project type',
-      'sum.budget': 'Budget range',
-      'sum.currency': 'Currency',
-      'sum.timeline': 'Timeline',
-      'sum.subject': 'Project brief — Agenova'
+      'contact.title': 'Get in touch',
+      'contact.desc': 'Have a product question or a partnership idea? Email us.',
+      'contact.mailHint': 'Email us directly'
     }
   };
 
@@ -1442,12 +1130,6 @@ select.ctl option{ background:#000; color:#fff }
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
-
-    /* refresh result panel (summary + contextual status) if it is visible */
-    if (!resultBox.hidden) {
-      if (summaryState) renderSummary();
-      if (resultMode) setResultStatus(resultMode);
-    }
 
     emit('lang', state.lang);
   }
@@ -1554,205 +1236,11 @@ select.ctl option{ background:#000; color:#fff }
     }
   }
 
-  /* ---------- form ---------- */
-  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  var form = $('#brief-form');
-  var resultBox = $('#form-result');
-  var sumBox = $('#sum-text');
-  var statusEl = $('#result-status');
-  var hintEl = $('#result-hint');
-  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
-  var summaryState = null;
-  var resultMode = null; /* null | fallback | ok | error */
-
-  function fieldWrap(input) { return input && input.closest('.field'); }
-  function markError(input, key) {
-    var wrap = fieldWrap(input);
-    if (!wrap) return;
-    wrap.classList.add('has-error');
-    input.setAttribute('aria-invalid', 'true');
-    var errEl = wrap.querySelector('.field-err');
-    if (errEl && currentCopy()[key]) setText(errEl, currentCopy()[key], false);
-  }
-  function clearError(input) {
-    var wrap = fieldWrap(input);
-    if (!wrap) return;
-    wrap.classList.remove('has-error');
-    input.removeAttribute('aria-invalid');
-  }
-
-  function getValue(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
-
-  /* 摘要里的下拉值用当前语言的选项文本,避免中英混排(提交给 Formspree 的仍是稳定 value) */
-  function selectedLabel(id) {
-    var sel = document.getElementById(id);
-    if (!sel || sel.selectedIndex < 0) return '';
-    var opt = sel.options[sel.selectedIndex];
-    return opt ? opt.textContent.trim() : sel.value;
-  }
-
-  function collectSummary() {
-    var dict = currentCopy();
-    function fmt(labelKey, val) { return dict[labelKey] + ': ' + (val || '—'); }
-    return [
-      fmt('sum.name', getValue('i-name')),
-      fmt('sum.email', getValue('i-email')),
-      fmt('sum.company', getValue('i-company')),
-      '',
-      dict['sum.what'] + ':',
-      getValue('i-what'),
-      '',
-      fmt('sum.type', selectedLabel('i-type')),
-      fmt('sum.budget', selectedLabel('i-budget')),
-      fmt('sum.currency', selectedLabel('i-currency')),
-      fmt('sum.timeline', selectedLabel('i-timeline'))
-    ].join('\n');
-  }
-
-  function mailtoUrl(summary) {
-    var dict = currentCopy();
-    var subject = dict['sum.subject'];
-    return 'mailto:' + CONTACT_EMAIL +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(summary);
-  }
-
-  function renderSummary() {
-    if (!summaryState) return;
-    sumBox.value = summaryState;
-  }
-
-  function scrollToResult() {
-    setTimeout(function () {
-      resultBox.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'nearest' });
-    }, 60);
-  }
-
-  /* 结果面板按状态显示不同文案(成功 / 占位兜底 / 失败) */
-  function setResultStatus(mode) {
-    resultMode = mode;
-    if (!resultBox) return;
-    resultBox.setAttribute('data-mode', mode);
-    var dict = currentCopy();
-    var statusKey = mode === 'ok' ? 'f.ok' : mode === 'error' ? 'f.err' : 'f.fb';
-    var hintKey = mode === 'ok' ? 'f.okHint' : mode === 'error' ? 'f.errHint' : 'f.fbHint';
-    if (statusEl) setText(statusEl, dict[statusKey], false);
-    if (hintEl) setText(hintEl, dict[hintKey], false);
-  }
-
-  function setSending(on) {
-    if (!submitBtn) return;
-    submitBtn.disabled = on;
-    setText(submitBtn, on ? currentCopy()['f.sending'] : currentCopy()['f.submit'], false);
-  }
-
-  function sendToEndpoint(cb) {
-    var fd = new FormData(form);
-    var dict = currentCopy();
-    var subject = form.querySelector('input[name="_subject"]');
-    var reply = form.querySelector('input[name="_replyto"]');
-    if (reply) reply.value = getValue('i-email');
-    if (subject) subject.value = dict['sum.subject'];
-    fetch(FORM_ENDPOINT, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
-      .then(function (res) { cb(res.ok ? 'ok' : 'error'); })
-      .catch(function () { cb('error'); });
-  }
-
-  function validate() {
-    var ok = true;
-    var name = getValue('i-name');
-    var email = getValue('i-email');
-    var what = getValue('i-what');
-
-    if (!name) { markError($('#i-name'), 'f.errName'); ok = false; } else clearError($('#i-name'));
-    if (!email) { markError($('#i-email'), 'f.errEmail'); ok = false; }
-    else if (!EMAIL_RE.test(email)) { markError($('#i-email'), 'f.errEmailFmt'); ok = false; }
-    else clearError($('#i-email'));
-    if (!what) { markError($('#i-what'), 'f.errWhat'); ok = false; } else clearError($('#i-what'));
-
-    if (!ok) {
-      var firstBad = form.querySelector('.has-error .ctl');
-      if (firstBad) firstBad.focus();
-    }
-    return ok;
-  }
-
-  function submitHandler(e) {
-    e.preventDefault();
-    if (!validate()) return;
-
-    summaryState = collectSummary();
-
-    /* 仍是占位 endpoint:不假称"已提交",直接进入邮件兜底,不报错 */
-    if (FORM_IS_PLACEHOLDER) {
-      resultBox.hidden = false;
-      renderSummary();
-      setResultStatus('fallback');
-      scrollToResult();
-      return;
-    }
-
-    setSending(true);
-    sendToEndpoint(function (mode) {
-      setSending(false);
-      resultBox.hidden = false;
-      renderSummary();
-      setResultStatus(mode);
-      scrollToResult();
-    });
-  }
-
-  function initForm() {
-    if (!form) return;
-    form.addEventListener('submit', submitHandler);
-    ['i-name', 'i-email', 'i-what'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('input', function () { clearError(el); });
-    });
-
-    $('#btn-copy').addEventListener('click', function () {
-      var btn = $('#btn-copy');
-      var text = sumBox.value;
-      function fallback() {
-        sumBox.focus(); sumBox.select();
-        try { document.execCommand('copy'); } catch (e) {}
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () { flashCopied(btn); },
-          function () { fallback(); flashCopied(btn); }
-        );
-      } else { fallback(); flashCopied(btn); }
-    });
-
-    $('#btn-mail').addEventListener('click', function () {
-      if (!summaryState) return;
-      try { window.location.href = mailtoUrl(summaryState); } catch (err) {}
-    });
-
-    $('#btn-edit').addEventListener('click', function () {
-      resultBox.hidden = true;
-      summaryState = null;
-      resultMode = null;
-      resultBox.removeAttribute('data-mode');
-      form.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
-    });
-  }
-
-  function flashCopied(btn) {
-    var dict = currentCopy();
-    var original = dict['f.copy'];
-    btn.textContent = dict['f.copied'];
-    setTimeout(function () { btn.textContent = original; }, 1600);
-  }
-
   /* ---------- init ---------- */
   function boot() {
     bindLangButtons();
     initHeader();
     initScrollReveal();
-    initForm();
 
     var saved = loadLang();
     if (saved) applyLang(saved);
