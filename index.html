@@ -287,18 +287,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 }
 .stmt em{ color:var(--muted) }
 
-/* Studio — what we build (product list) */
-.studio-list{ margin-top:clamp(56px,8vh,90px) }
-.studio{ display:grid; grid-template-columns:64px 1fr; gap:clamp(18px,3vw,44px); padding:clamp(30px,4.5vh,52px) 0; border-top:1px solid var(--line-soft) }
-.studio:last-child{ border-bottom:1px solid var(--line-soft) }
-.studio-no{ font-size:14px; font-weight:600; color:var(--text-3); padding-top:8px; font-variant-numeric:tabular-nums }
-.studio-head{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:14px }
-.studio-title{ margin:0; font-size:var(--h3-fs); font-weight:600; letter-spacing:-.02em }
-.studio-title a{ color:inherit; text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:2px; transition:border-color .3s ease }
-@media (hover:hover){ .studio-title a:hover{ border-color:#fff } }
-.studio-desc{ margin:0; max-width:62ch; color:var(--text-2); font-size:16px; line-height:1.7 }
-.studio-stmt{ margin-top:clamp(64px,9vh,104px) }
-
 /* Workforce */
 .wf-lead{
   margin:clamp(40px,6vh,64px) 0 0; max-width:640px; font-size:clamp(1.2rem,calc(.9rem + .8vw),1.65rem);
@@ -316,12 +304,13 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 .wf-col li::before{ content:""; flex:none; width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.35); transform:translateY(-1px) }
 .wf-assure{ margin-top:clamp(56px,8vh,90px) }
 
-/* Selected work — self-built projects, numbered list */
+/* Product lab — our own products & projects, numbered list */
 .work-list{ margin-top:clamp(56px,8vh,90px) }
 .work{
   display:grid; grid-template-columns:64px 1fr; gap:clamp(18px,3vw,44px);
-  padding:clamp(30px,4.5vh,52px) 0; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+  padding:clamp(30px,4.5vh,52px) 0; border-top:1px solid var(--line-soft);
 }
+.work-list > .work:last-child{ border-bottom:1px solid var(--line-soft) }
 .work-no{ font-size:14px; font-weight:600; color:var(--text-3); padding-top:8px; font-variant-numeric:tabular-nums }
 .work-body{ min-width:0 }
 .work-head{ display:flex; align-items:center; gap:14px; flex-wrap:wrap }
@@ -405,7 +394,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
   .stat + .stat{ border-left:0; border-top:1px solid var(--line-soft) }
 
   section[id]{ scroll-margin-top:80px }
-  .studio{ grid-template-columns:40px 1fr }
   .work{ grid-template-columns:40px 1fr }
   .work-meta{ grid-template-columns:1fr }
   .wf-grid{ grid-template-columns:1fr }
@@ -478,7 +466,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 
     <nav class="nav" id="site-nav" data-i18n-aria="ui.navLabel" aria-label="主导航">
       <ul class="nav-list">
-        <li><a href="#studio" data-i18n="nav.studio">我们在做什么</a></li>
         <li><a href="#workforce" data-i18n="nav.workforce">AI 员工</a></li>
         <li><a href="#products" data-i18n="nav.products">产品</a></li>
         <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
@@ -537,8 +524,8 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
     </div>
   </section>
 
-  <!-- ===================== Studio principles ===================== -->
-  <section class="strip" aria-label="Studio principles">
+  <!-- ===================== How we work ===================== -->
+  <section class="strip" aria-label="How we work">
     <ul class="wrap strip-grid">
       <li class="stat d6" data-rv>
         <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
@@ -559,52 +546,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
         <span data-i18n="strip.workflow">自研 · 自上线</span>
       </li>
     </ul>
-  </section>
-
-  <!-- ===================== What we build ===================== -->
-  <section id="studio" class="sec sec-pad" aria-labelledby="studio-title">
-    <div class="wrap">
-      <div class="sec-inner">
-        <div class="sec-head reveal">
-          <h2 class="sec-title" id="studio-title" data-i18n="studio.title">我们在做什么</h2>
-        </div>
-
-        <ol class="studio-list">
-          <li class="studio reveal">
-            <span class="studio-no" aria-hidden="true">01</span>
-            <div>
-              <div class="studio-head">
-                <h3 class="studio-title"><a href="#products" data-i18n="studio1.name">Google Feed 价格检查</a></h3>
-                <span class="work-pill" data-i18n="studio1.status">已上线</span>
-              </div>
-              <p class="studio-desc" data-i18n="studio1.desc">给维护 Google 购物 Feed、投放购物广告的独立站团队：把商品页当前价格与 Google 商品 Feed 逐项比对，price、sale_price、availability 不一致的商品与字段直接标出。免费使用，无需注册。</p>
-            </div>
-          </li>
-          <li class="studio reveal">
-            <span class="studio-no" aria-hidden="true">02</span>
-            <div>
-              <div class="studio-head">
-                <h3 class="studio-title"><a href="#work" data-i18n="studio2.name">OneFlow（贾维斯）</a></h3>
-                <span class="work-pill" data-i18n="studio2.status">自主开发</span>
-              </div>
-              <p class="studio-desc" data-i18n="studio2.desc">一句话驱动的贾维斯式 AI 管家：用自然语言下指令，Agent 自行拆解、调用工具并执行到完成。</p>
-            </div>
-          </li>
-          <li class="studio reveal">
-            <span class="studio-no" aria-hidden="true">03</span>
-            <div>
-              <div class="studio-head">
-                <h3 class="studio-title" data-i18n="studio3.name">更多 AI 工具产品</h3>
-                <span class="work-pill" data-i18n="studio3.status">探索中</span>
-              </div>
-              <p class="studio-desc" data-i18n="studio3.desc">这支 AI 员工队伍还在自己找问题、做工具；新的产品会先出现在这里。</p>
-            </div>
-          </li>
-        </ol>
-
-        <p class="stmt studio-stmt reveal" data-i18n="studio.stmt">我们不承接定制开发——只做<em>自己的产品</em>，从设计、开发到上线。</p>
-      </div>
-    </div>
   </section>
 
   <!-- ===================== Workforce ===================== -->
@@ -644,48 +585,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
     </div>
   </section>
 
-  <!-- ===================== Selected work ===================== -->
-  <section id="work" class="sec sec-pad" aria-labelledby="work-title">
-    <div class="wrap">
-      <div class="sec-inner">
-        <div class="sec-head reveal">
-          <h2 class="sec-title" id="work-title" data-i18n="work.title">代表项目</h2>
-        </div>
-
-        <ol class="work-list">
-          <li class="work reveal">
-            <span class="work-no" aria-hidden="true">01</span>
-            <div class="work-body">
-              <div class="work-head">
-                <h3 class="work-name" data-i18n="work1.name">OneFlow（贾维斯）</h3>
-                <span class="work-pill" data-i18n="work1.type">自主开发</span>
-              </div>
-              <p class="work-tag" data-i18n="work1.tag">一句话驱动的贾维斯式 AI 管家</p>
-              <p class="work-desc" data-i18n="work1.desc">用一句自然语言下指令，Agent 自行拆解、多次调用工具（function calling）、核对并汇报，把任务真正执行完毕。</p>
-
-              <dl class="work-meta">
-                <div>
-                  <dt data-i18n="work.mHigh">亮点</dt>
-                  <dd>
-                    <ul class="work-bullets">
-                      <li data-i18n="work1.h1">语音唤醒 / 离线本地识别</li>
-                      <li data-i18n="work1.h2">主动服务：定时任务、日程提醒、情景关怀</li>
-                      <li data-i18n="work1.h3">能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线</li>
-                    </ul>
-                  </dd>
-                </div>
-                <div>
-                  <dt data-i18n="work.mTech">技术</dt>
-                  <dd data-i18n="work1.tech">Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入</dd>
-                </div>
-              </dl>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== Product lab ===================== -->
   <section id="products" class="sec sec-pad" aria-labelledby="prod-title">
     <div class="wrap">
@@ -696,18 +595,18 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
 
         <ol class="work-list">
           <li class="work reveal">
-            <span class="work-no" aria-hidden="true">02</span>
+            <span class="work-no" aria-hidden="true">01</span>
             <div class="work-body">
               <div class="work-head">
                 <h3 class="work-name" data-i18n="prod1.name">Google Feed 价格检查</h3>
-                <span class="work-pill" data-i18n="prod.status">已上线</span>
+                <span class="work-pill" data-i18n="prod1.status">已上线</span>
               </div>
               <p class="work-tag" data-i18n="prod1.tag">商品页与 Google Feed 价格不一致，一眼查清</p>
-              <p class="work-desc" data-i18n="prod1.desc">给维护 Google 购物 Feed、投购物广告的独立站团队：上传前花几秒自查一遍，把商品页当前价格与 Google 商品 Feed 逐项比对，price、sale_price、availability 不一致的商品与字段直接标出，并提示该先改哪一处——从源头避免价格不一致拖累广告审核与曝光。免费使用，无需注册。</p>
+              <p class="work-desc" data-i18n="prod1.desc">给投 Google Shopping 的独立站：把商品页当前价格与 Feed 逐项比对，price、sale_price、availability 不一致直接标出。免费使用，无需注册。</p>
 
               <dl class="work-meta">
                 <div>
-                  <dt data-i18n="work.mHigh">亮点</dt>
+                  <dt data-i18n="prod.mHigh">亮点</dt>
                   <dd>
                     <ul class="work-bullets">
                       <li data-i18n="prod1.h1">同时比对 price、sale_price 与 availability 差异</li>
@@ -724,6 +623,47 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
                   </dd>
                 </div>
               </dl>
+            </div>
+          </li>
+
+          <li class="work reveal">
+            <span class="work-no" aria-hidden="true">02</span>
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-name" data-i18n="prod2.name">OneFlow（贾维斯）</h3>
+                <span class="work-pill" data-i18n="prod2.status">自研项目</span>
+              </div>
+              <p class="work-tag" data-i18n="prod2.tag">一句话驱动的贾维斯式 AI 管家</p>
+              <p class="work-desc" data-i18n="prod2.desc">用一句自然语言下指令，Agent 自行拆解、多次调用工具（function calling）、核对并汇报，把任务真正执行完毕。</p>
+
+              <dl class="work-meta">
+                <div>
+                  <dt data-i18n="prod.mHigh">亮点</dt>
+                  <dd>
+                    <ul class="work-bullets">
+                      <li data-i18n="prod2.h1">语音唤醒 / 离线本地识别</li>
+                      <li data-i18n="prod2.h2">主动服务：定时任务、日程提醒、情景关怀</li>
+                      <li data-i18n="prod2.h3">能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div>
+                  <dt data-i18n="prod.mTech">技术</dt>
+                  <dd data-i18n="prod2.tech">Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入</dd>
+                </div>
+              </dl>
+            </div>
+          </li>
+
+          <li class="work reveal">
+            <span class="work-no" aria-hidden="true">03</span>
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-name" data-i18n="prod3.name">更多 AI 工具产品</h3>
+                <span class="work-pill" data-i18n="prod3.status">探索中</span>
+              </div>
+              <p class="work-tag" data-i18n="prod3.tag">新的产品会先出现在这里</p>
+              <p class="work-desc" data-i18n="prod3.desc">这支 AI 员工队伍还在自己找问题、做工具：从设计、开发到上线，都由我们自己完成，新的产品会先出现在这里。</p>
             </div>
           </li>
         </ol>
@@ -762,7 +702,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
         </div>
 
         <nav class="foot-nav" data-i18n-aria="ui.footNavLabel" aria-label="页脚导航">
-          <a href="#studio" data-i18n="nav.studio">我们在做什么</a>
           <a href="#workforce" data-i18n="nav.workforce">AI 员工</a>
           <a href="#products" data-i18n="nav.products">产品</a>
           <a href="#contact" data-i18n="nav.contact">联系</a>
@@ -802,7 +741,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'ui.brandAria': 'Agenova — 首页',
       'ui.menuOpen': '打开菜单',
       'ui.menuClose': '关闭菜单',
-      'nav.studio': '我们在做什么',
       'nav.workforce': 'AI 员工',
       'nav.products': '产品',
       'nav.contact': '联系',
@@ -816,17 +754,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'strip.agent': 'AI Agent 执行',
       'strip.review': '人工审核把关',
       'strip.workflow': '自研 · 自上线',
-      'studio.title': '我们在做什么',
-      'studio.stmt': '我们不承接定制开发——只做<em>自己的产品</em>，从设计、开发到上线。',
-      'studio1.name': 'Google Feed 价格检查',
-      'studio1.status': '已上线',
-      'studio1.desc': '给维护 Google 购物 Feed、投放购物广告的独立站团队：把商品页当前价格与 Google 商品 Feed 逐项比对，price、sale_price、availability 不一致的商品与字段直接标出。免费使用，无需注册。',
-      'studio2.name': 'OneFlow（贾维斯）',
-      'studio2.status': '自主开发',
-      'studio2.desc': '一句话驱动的贾维斯式 AI 管家：用自然语言下指令，Agent 自行拆解、调用工具并执行到完成。',
-      'studio3.name': '更多 AI 工具产品',
-      'studio3.status': '探索中',
-      'studio3.desc': '这支 AI 员工队伍还在自己找问题、做工具；新的产品会先出现在这里。',
       'wf.title': 'AI 员工公司',
       'wf.lead': '我们把做产品组织成一支 AI 员工队伍：Agent 做执行，人做判断与验收。',
       'wf.agents': '由 Agent 执行',
@@ -842,26 +769,29 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'wf.hm4': '上线发布',
       'wf.assure': '每个产品上线之前，都经过<em>人工审核</em>。',
       'prod.title': '产品实验室',
+      'prod.mHigh': '亮点',
       'prod.mEntry': '入口',
-      'prod.status': '已上线',
+      'prod.mTech': '技术',
       'prod1.name': 'Google Feed 价格检查',
+      'prod1.status': '已上线',
       'prod1.tag': '商品页与 Google Feed 价格不一致，一眼查清',
-      'prod1.desc': '给维护 Google 购物 Feed、投购物广告的独立站团队：上传前花几秒自查一遍，把商品页当前价格与 Google 商品 Feed 逐项比对，price、sale_price、availability 不一致的商品与字段直接标出，并提示该先改哪一处——从源头避免价格不一致拖累广告审核与曝光。免费使用，无需注册。',
+      'prod1.desc': '给投 Google Shopping 的独立站：把商品页当前价格与 Feed 逐项比对，price、sale_price、availability 不一致直接标出。免费使用，无需注册。',
       'prod1.h1': '同时比对 price、sale_price 与 availability 差异',
       'prod1.h2': '针对每处差异给出 JSON-LD 修复建议',
       'prod1.h3': '检测报告 24 小时内可回看，方便复查',
       'prod.cta': '打开 Google Feed 价格检查 ↗',
-      'work.title': '代表项目',
-      'work.mHigh': '亮点',
-      'work.mTech': '技术',
-      'work1.name': 'OneFlow（贾维斯）',
-      'work1.type': '自主开发',
-      'work1.tag': '一句话驱动的贾维斯式 AI 管家',
-      'work1.desc': '用一句自然语言下指令，Agent 自行拆解、多次调用工具（function calling）、核对并汇报，把任务真正执行完毕。',
-      'work1.h1': '语音唤醒 / 离线本地识别',
-      'work1.h2': '主动服务：定时任务、日程提醒、情景关怀',
-      'work1.h3': '能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线',
-      'work1.tech': 'Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入',
+      'prod2.name': 'OneFlow（贾维斯）',
+      'prod2.status': '自研项目',
+      'prod2.tag': '一句话驱动的贾维斯式 AI 管家',
+      'prod2.desc': '用一句自然语言下指令，Agent 自行拆解、多次调用工具（function calling）、核对并汇报，把任务真正执行完毕。',
+      'prod2.h1': '语音唤醒 / 离线本地识别',
+      'prod2.h2': '主动服务：定时任务、日程提醒、情景关怀',
+      'prod2.h3': '能自己长新能力：听需求 → 自己写工具代码 + 测试 → 沙箱验证 → 一键确认合并上线',
+      'prod2.tech': 'Python / FastAPI · React + TypeScript · Electron 桌面壳 · 本地语音识别 · 多厂商 LLM 接入',
+      'prod3.name': '更多 AI 工具产品',
+      'prod3.status': '探索中',
+      'prod3.tag': '新的产品会先出现在这里',
+      'prod3.desc': '这支 AI 员工队伍还在自己找问题、做工具：从设计、开发到上线，都由我们自己完成，新的产品会先出现在这里。',
       'contact.title': '联系我们',
       'contact.desc': '有产品使用问题或想法，欢迎邮件联系我们。',
       'contact.mailHint': '直接邮件'
@@ -878,7 +808,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'ui.brandAria': 'Agenova — home',
       'ui.menuOpen': 'Open menu',
       'ui.menuClose': 'Close menu',
-      'nav.studio': 'What we build',
       'nav.workforce': 'Workforce',
       'nav.products': 'Products',
       'nav.contact': 'Contact',
@@ -892,17 +821,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'strip.agent': 'Agent-native execution',
       'strip.review': 'Human-reviewed',
       'strip.workflow': 'Self-built, self-shipped',
-      'studio.title': 'What we build',
-      'studio.stmt': 'We don\'t take on custom client work — we build <em>our own products</em>, from design to launch.',
-      'studio1.name': 'Google Feed Price Check',
-      'studio1.status': 'Live',
-      'studio1.desc': 'For independent-store teams running Google Shopping: it checks every feed entry against the live product page and flags mismatches in price, sale_price, and availability. Free to use, no sign-up.',
-      'studio2.name': 'OneFlow (Jarvis)',
-      'studio2.status': 'Self-built',
-      'studio2.desc': 'A Jarvis-style AI butler driven by a single instruction: the agent breaks the task down, calls tools, and runs it to completion.',
-      'studio3.name': 'More AI tool products',
-      'studio3.status': 'In exploration',
-      'studio3.desc': 'Our AI workforce is still finding problems worth solving — new products will show up here first.',
       'wf.title': 'An AI workforce company',
       'wf.lead': 'We run product development as an AI workforce: agents execute, humans judge and sign off.',
       'wf.agents': 'Agents execute',
@@ -918,26 +836,29 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'wf.hm4': 'Launch',
       'wf.assure': 'Every product is <em>human-reviewed</em> before it ships.',
       'prod.title': 'Product lab',
+      'prod.mHigh': 'Highlights',
       'prod.mEntry': 'Access',
-      'prod.status': 'Live',
+      'prod.mTech': 'Stack',
       'prod1.name': 'Google Feed Price Check',
+      'prod1.status': 'Live',
       'prod1.tag': 'Product pages and Google Feed out of sync? Spot it at a glance.',
-      'prod1.desc': 'For independent-store teams running Google Shopping: paste in your feed and it checks each entry against the live product page, flagging mismatches in price, sale_price, and availability and telling you which to fix first — so inconsistent pricing never quietly costs you ad approvals and impressions. Free to use, no sign-up.',
+      'prod1.desc': 'For independent stores running Google Shopping: it compares each live product page against your feed and flags mismatches in price, sale_price, and availability. Free to use, no sign-up.',
       'prod1.h1': 'Flags mismatches in price, sale_price, and availability',
       'prod1.h2': 'Suggests a JSON-LD fix for each mismatch',
       'prod1.h3': 'Your report stays viewable for 24 hours, easy to re-check',
       'prod.cta': 'Open Google Feed Price Check ↗',
-      'work.title': 'Selected work',
-      'work.mHigh': 'Highlights',
-      'work.mTech': 'Stack',
-      'work1.name': 'OneFlow (Jarvis)',
-      'work1.type': 'Self-built',
-      'work1.tag': 'A Jarvis-style AI butler driven by a single instruction.',
-      'work1.desc': 'Give one instruction in natural language: the agent decomposes the task, calls tools across multiple steps (function calling), checks its work, and reports back until the task is actually done.',
-      'work1.h1': 'Voice wake-up / offline on-device recognition',
-      'work1.h2': 'Proactive service: scheduled tasks, calendar reminders, contextual care',
-      'work1.h3': 'Grows its own abilities: hears a need → writes its own tool code + tests → validates in a sandbox → one-click confirm to merge and ship',
-      'work1.tech': 'Python / FastAPI · React + TypeScript · Electron desktop shell · On-device speech recognition · Multi-vendor LLM integration',
+      'prod2.name': 'OneFlow (Jarvis)',
+      'prod2.status': 'Self-built',
+      'prod2.tag': 'A Jarvis-style AI butler driven by a single instruction.',
+      'prod2.desc': 'Give one instruction in natural language: the agent decomposes the task, calls tools across multiple steps (function calling), checks its work, and reports back until the task is actually done.',
+      'prod2.h1': 'Voice wake-up / offline on-device recognition',
+      'prod2.h2': 'Proactive service: scheduled tasks, calendar reminders, contextual care',
+      'prod2.h3': 'Grows its own abilities: hears a need → writes its own tool code + tests → validates in a sandbox → one-click confirm to merge and ship',
+      'prod2.tech': 'Python / FastAPI · React + TypeScript · Electron desktop shell · On-device speech recognition · Multi-vendor LLM integration',
+      'prod3.name': 'More AI tool products',
+      'prod3.status': 'In exploration',
+      'prod3.tag': 'New products will show up here first.',
+      'prod3.desc': 'Our AI workforce is still finding problems worth solving — we design, build, and ship everything ourselves, and new products will show up here first.',
       'contact.title': 'Get in touch',
       'contact.desc': 'Have a product question or an idea to share? Email us.',
       'contact.mailHint': 'Email us directly'
@@ -945,7 +866,7 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
   };
 
   /* keys whose values contain controlled HTML (only <em>), everything else textContent */
-  var HTML_KEYS = { 'hero.title.l2': 1, 'studio.stmt': 1, 'wf.assure': 1 };
+  var HTML_KEYS = { 'hero.title.l2': 1, 'wf.assure': 1 };
   var state = { lang: 'zh' };
 
   /* ---------- helpers ---------- */
