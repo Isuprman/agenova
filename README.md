@@ -1,18 +1,22 @@
 # Agenova
 
-Agenova — Your AI workforce, shipped.
+Agenova — 一支 AI 员工队伍，自己做产品(Your AI workforce, shipped.)。
 
-AI Agent 驱动软件交付的公司官网(单文件静态页)。
+自研 AI 工具产品的工作室官网(单文件静态页)。**不承接客户定制开发**,只做自己的产品:从设计、开发到上线。
 
-- 纯黑高质感单页:服务 / 合作方式 / AI 员工 / 代表项目 / 联系
+- 纯黑高质感单页:我们在做什么 / AI 员工 / 产品 / 联系
 - 中英文切换(默认中文)
-- 咨询表单接 Formspree
-- 视觉:Agenova.ai (Work in progress — private)
+- 联系:邮箱(无表单)
+- 已上线首个产品:Google Feed 价格检查 → https://feedcheck.wmbsxs.top
 
 ## 本地打开
 
-直接双击 `index.html` 即可预览(无需构建,纯静态单文件)。
+浏览器直接打开 `index.html` 即可。
 
-## 上线(将来)
+## 部署
 
-把 index.html 托管到 GitHub Pages / 任意静态托管即可。
+Cloudflare Pages 项目 `agenova`,域名 wmbsxs.top。
+
+```bash
+python3 ~/.hermes/cf/cf_deploy.py agenova ~/work/Agenova-landing
+```
