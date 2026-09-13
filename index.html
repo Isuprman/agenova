@@ -662,6 +662,38 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
             <span class="work-no" aria-hidden="true">03</span>
             <div class="work-body">
               <div class="work-head">
+                <h3 class="work-name" data-i18n="prodsr.name">Shelf Reset</h3>
+                <span class="work-pill" data-i18n="prodsr.status">已上线</span>
+              </div>
+              <p class="work-tag" data-i18n="prodsr.tag">把收银机销售表变成一张店员照着摆的货架单</p>
+              <p class="work-desc" data-i18n="prodsr.desc">给英语市场的小店（杂货 / 酒类 / 宠物 / 五金 / 特色食品）：把收银机导出的销售 CSV 拖进去，自动算出「一个货架六层、每层摆哪些货、每样占几个位置」，出一张可打印的摆放单给店员照着执行。换季、促销、开新店时最用得上。文件只在浏览器里处理、不上传；免费生成 1 个货架。</p>
+
+              <dl class="work-meta">
+                <div>
+                  <dt data-i18n="prod.mHigh">亮点</dt>
+                  <dd>
+                    <ul class="work-bullets">
+                      <li data-i18n="prodsr.h1">按销量自动排序，热销品落到眼睛高度的层</li>
+                      <li data-i18n="prodsr.h2">输出可直接打印 / 存 PDF 的摆放单，也能下载 CSV</li>
+                      <li data-i18n="prodsr.h3">文件在本机浏览器处理，不上传服务器</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div>
+                  <dt data-i18n="prod.mEntry">入口</dt>
+                  <dd>
+                    <!-- 正式入口 shelfreset.wmbsxs.top(accept 日 2026-09-13 激活);DNS token = ~/.hermes/cf/dns_token.txt -->
+                    <a class="btn btn--solid btn--lg" href="https://shelfreset.wmbsxs.top" target="_blank" rel="noopener" data-i18n="prodsr.cta">打开 Shelf Reset ↗</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </li>
+
+          <li class="work reveal">
+            <span class="work-no" aria-hidden="true">04</span>
+            <div class="work-body">
+              <div class="work-head">
                 <h3 class="work-name" data-i18n="prod3.name">更多 AI 工具产品</h3>
                 <span class="work-pill" data-i18n="prod3.status">探索中</span>
               </div>
@@ -795,6 +827,14 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'prod3.status': '探索中',
       'prod3.tag': '新的产品会先出现在这里',
       'prod3.desc': '这支 AI 员工队伍还在自己找问题、做工具：从设计、开发到上线，都由我们自己完成，新的产品会先出现在这里。',
+      'prodsr.name': 'Shelf Reset',
+      'prodsr.status': '已上线',
+      'prodsr.tag': '把收银机销售表变成一张店员照着摆的货架单',
+      'prodsr.desc': '给英语市场的小店（杂货 / 酒类 / 宠物 / 五金 / 特色食品）：把收银机导出的销售 CSV 拖进去，自动算出「一个货架六层、每层摆哪些货、每样占几个位置」，出一张可打印的摆放单给店员照着执行。换季、促销、开新店时最用得上。文件只在浏览器里处理、不上传；免费生成 1 个货架。',
+      'prodsr.h1': '按销量自动排序，热销品落到眼睛高度的层',
+      'prodsr.h2': '输出可直接打印 / 存 PDF 的摆放单，也能下载 CSV',
+      'prodsr.h3': '文件在本机浏览器处理，不上传服务器',
+      'prodsr.cta': '打开 Shelf Reset ↗',
       'contact.title': '联系我们',
       'contact.desc': '有产品使用问题或想法，欢迎邮件联系我们。',
       'contact.mailHint': '直接邮件'
@@ -862,6 +902,14 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'prod3.status': 'In exploration',
       'prod3.tag': 'New products will show up here first.',
       'prod3.desc': 'Our AI workforce is still finding problems worth solving — we design, build, and ship everything ourselves, and new products will show up here first.',
+      'prodsr.name': 'Shelf Reset',
+      'prodsr.status': 'Live',
+      'prodsr.tag': 'Turn your POS export into a shelf plan your staff can follow',
+      'prodsr.desc': 'For independent retailers in English-speaking markets (grocery, liquor, pet, hardware, specialty food): drop in your point-of-sale sales export and get a one-page plan for a single 6-level shelf — which SKUs go on which level and how many facings each one gets — printable for staff to execute. Built for seasonal resets, promotions and new-store setups. Your file is processed in your browser and never uploaded; one shelf free.',
+      'prodsr.h1': 'Ranks by units sold, so best-sellers land at eye level',
+      'prodsr.h2': 'Prints or saves to PDF, and exports CSV',
+      'prodsr.h3': 'Runs entirely in your browser — nothing is uploaded',
+      'prodsr.cta': 'Open Shelf Reset ↗',
       'contact.title': 'Get in touch',
       'contact.desc': 'Have a product question or an idea to share? Email us.',
       'contact.mailHint': 'Email us directly'
