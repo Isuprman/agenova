@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agenova | 自研 AI 工具产品工作室</title>
-<meta name="description" content="Agenova 是一支 AI 员工队伍：自己设计、自己开发、自己上线 AI 工具产品。已上线产品：Google Feed 价格检查。">
+<meta name="description" content="Agenova 是一支 AI 员工队伍：自己设计、自己开发、自己上线 AI 工具产品。">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://wmbsxs.top/">
@@ -30,8 +30,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-  {"@type":"Organization","@id":"https://wmbsxs.top/#org","name":"Agenova","url":"https://wmbsxs.top","email":"lin972718993@gmail.com","description":"Agenova is an AI workforce that designs, builds, and ships its own AI tool products."},
-  {"@type":"SoftwareApplication","@id":"https://wmbsxs.top/#feedcheck","name":"Google Feed Price Check","url":"https://feedcheck.wmbsxs.top","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Compares a Google Shopping feed against live product pages and flags mismatches in price, sale_price, and availability.","publisher":{"@id":"https://wmbsxs.top/#org"}}
+  {"@type":"Organization","@id":"https://wmbsxs.top/#org","name":"Agenova","url":"https://wmbsxs.top","email":"lin972718993@gmail.com","description":"Agenova is an AI workforce that designs, builds, and ships its own AI tool products."}
 ]}
 </script>
 
@@ -601,38 +600,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
             <span class="work-no" aria-hidden="true">01</span>
             <div class="work-body">
               <div class="work-head">
-                <h3 class="work-name" data-i18n="prod1.name">Google Feed 价格检查</h3>
-                <span class="work-pill" data-i18n="prod1.status">已上线</span>
-              </div>
-              <p class="work-tag" data-i18n="prod1.tag">商品页与 Google Feed 价格不一致，一眼查清</p>
-              <p class="work-desc" data-i18n="prod1.desc">给投 Google Shopping 的独立站：把商品页当前价格与 Feed 逐项比对，price、sale_price、availability 不一致直接标出。免费使用，无需注册。</p>
-
-              <dl class="work-meta">
-                <div>
-                  <dt data-i18n="prod.mHigh">亮点</dt>
-                  <dd>
-                    <ul class="work-bullets">
-                      <li data-i18n="prod1.h1">同时比对 price、sale_price 与 availability 差异</li>
-                      <li data-i18n="prod1.h2">针对每处差异给出 JSON-LD 修复建议</li>
-                      <li data-i18n="prod1.h3">检测报告 24 小时内可回看，方便复查</li>
-                    </ul>
-                  </dd>
-                </div>
-                <div>
-                  <dt data-i18n="prod.mEntry">入口</dt>
-                  <dd>
-                    <!-- 正式入口 feedcheck.wmbsxs.top(已激活 2026-09-07);DNS token = /tmp/cf_token_dns.txt -->
-                    <a class="btn btn--solid btn--lg" href="https://feedcheck.wmbsxs.top" target="_blank" rel="noopener" data-i18n="prod.cta">打开 Google Feed 价格检查 ↗</a>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </li>
-
-          <li class="work reveal">
-            <span class="work-no" aria-hidden="true">02</span>
-            <div class="work-body">
-              <div class="work-head">
                 <h3 class="work-name" data-i18n="prod2.name">OneFlow（贾维斯）</h3>
                 <span class="work-pill" data-i18n="prod2.status">自研项目</span>
               </div>
@@ -659,39 +626,7 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
           </li>
 
           <li class="work reveal">
-            <span class="work-no" aria-hidden="true">03</span>
-            <div class="work-body">
-              <div class="work-head">
-                <h3 class="work-name" data-i18n="prodsr.name">Shelf Reset</h3>
-                <span class="work-pill" data-i18n="prodsr.status">已上线</span>
-              </div>
-              <p class="work-tag" data-i18n="prodsr.tag">把收银机销售表变成一张店员照着摆的货架单</p>
-              <p class="work-desc" data-i18n="prodsr.desc">给英语市场的小店（杂货 / 酒类 / 宠物 / 五金 / 特色食品）：把收银机导出的销售 CSV 拖进去，自动算出「一个货架六层、每层摆哪些货、每样占几个位置」，出一张可打印的摆放单给店员照着执行。换季、促销、开新店时最用得上。文件只在浏览器里处理、不上传；免费生成 1 个货架。</p>
-
-              <dl class="work-meta">
-                <div>
-                  <dt data-i18n="prod.mHigh">亮点</dt>
-                  <dd>
-                    <ul class="work-bullets">
-                      <li data-i18n="prodsr.h1">按销量自动排序，热销品落到眼睛高度的层</li>
-                      <li data-i18n="prodsr.h2">输出可直接打印 / 存 PDF 的摆放单，也能下载 CSV</li>
-                      <li data-i18n="prodsr.h3">文件在本机浏览器处理，不上传服务器</li>
-                    </ul>
-                  </dd>
-                </div>
-                <div>
-                  <dt data-i18n="prod.mEntry">入口</dt>
-                  <dd>
-                    <!-- 正式入口 shelfreset.wmbsxs.top(accept 日 2026-09-13 激活);DNS token = ~/.hermes/cf/dns_token.txt -->
-                    <a class="btn btn--solid btn--lg" href="https://shelfreset.wmbsxs.top" target="_blank" rel="noopener" data-i18n="prodsr.cta">打开 Shelf Reset ↗</a>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </li>
-
-          <li class="work reveal">
-            <span class="work-no" aria-hidden="true">04</span>
+            <span class="work-no" aria-hidden="true">02</span>
             <div class="work-body">
               <div class="work-head">
                 <h3 class="work-name" data-i18n="prod3.name">更多 AI 工具产品</h3>
@@ -766,7 +701,7 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
   var copy = {
     zh: {
       'meta.title': 'Agenova | 自研 AI 工具产品工作室',
-      'meta.desc': 'Agenova 是一支 AI 员工队伍：自己设计、自己开发、自己上线 AI 工具产品。已上线产品：Google Feed 价格检查。',
+      'meta.desc': 'Agenova 是一支 AI 员工队伍：自己设计、自己开发、自己上线 AI 工具产品。',
       'og.title': 'Agenova | 自研 AI 工具产品工作室',
       'og.desc': 'Agenova 是一支 AI 员工队伍：自己设计、开发并上线 AI 工具产品。',
       'og.locale': 'zh_CN',
@@ -807,14 +742,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'prod.mHigh': '亮点',
       'prod.mEntry': '入口',
       'prod.mTech': '技术',
-      'prod1.name': 'Google Feed 价格检查',
-      'prod1.status': '已上线',
-      'prod1.tag': '商品页与 Google Feed 价格不一致，一眼查清',
-      'prod1.desc': '给投 Google Shopping 的独立站：把商品页当前价格与 Feed 逐项比对，price、sale_price、availability 不一致直接标出。免费使用，无需注册。',
-      'prod1.h1': '同时比对 price、sale_price 与 availability 差异',
-      'prod1.h2': '针对每处差异给出 JSON-LD 修复建议',
-      'prod1.h3': '检测报告 24 小时内可回看，方便复查',
-      'prod.cta': '打开 Google Feed 价格检查 ↗',
       'prod2.name': 'OneFlow（贾维斯）',
       'prod2.status': '自研项目',
       'prod2.tag': '一句话驱动的贾维斯式 AI 管家',
@@ -827,21 +754,13 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'prod3.status': '探索中',
       'prod3.tag': '新的产品会先出现在这里',
       'prod3.desc': '这支 AI 员工队伍还在自己找问题、做工具：从设计、开发到上线，都由我们自己完成，新的产品会先出现在这里。',
-      'prodsr.name': 'Shelf Reset',
-      'prodsr.status': '已上线',
-      'prodsr.tag': '把收银机销售表变成一张店员照着摆的货架单',
-      'prodsr.desc': '给英语市场的小店（杂货 / 酒类 / 宠物 / 五金 / 特色食品）：把收银机导出的销售 CSV 拖进去，自动算出「一个货架六层、每层摆哪些货、每样占几个位置」，出一张可打印的摆放单给店员照着执行。换季、促销、开新店时最用得上。文件只在浏览器里处理、不上传；免费生成 1 个货架。',
-      'prodsr.h1': '按销量自动排序，热销品落到眼睛高度的层',
-      'prodsr.h2': '输出可直接打印 / 存 PDF 的摆放单，也能下载 CSV',
-      'prodsr.h3': '文件在本机浏览器处理，不上传服务器',
-      'prodsr.cta': '打开 Shelf Reset ↗',
       'contact.title': '联系我们',
       'contact.desc': '有产品使用问题或想法，欢迎邮件联系我们。',
       'contact.mailHint': '直接邮件'
     },
     en: {
       'meta.title': 'Agenova | An AI workforce building its own products',
-      'meta.desc': 'Agenova is an AI workforce that designs, builds, and ships its own AI tool products. Live product: Google Feed Price Check.',
+      'meta.desc': 'Agenova is an AI workforce that designs, builds, and ships its own AI tool products.',
       'og.title': 'Agenova | An AI workforce building its own products',
       'og.desc': 'Agenova is an AI workforce that designs, builds, and ships its own AI tool products.',
       'og.locale': 'en_US',
@@ -882,14 +801,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'prod.mHigh': 'Highlights',
       'prod.mEntry': 'Access',
       'prod.mTech': 'Stack',
-      'prod1.name': 'Google Feed Price Check',
-      'prod1.status': 'Live',
-      'prod1.tag': 'Product pages and Google Feed out of sync? Spot it at a glance.',
-      'prod1.desc': 'For independent stores running Google Shopping: it compares each live product page against your feed and flags mismatches in price, sale_price, and availability. Free to use, no sign-up.',
-      'prod1.h1': 'Flags mismatches in price, sale_price, and availability',
-      'prod1.h2': 'Suggests a JSON-LD fix for each mismatch',
-      'prod1.h3': 'Your report stays viewable for 24 hours, easy to re-check',
-      'prod.cta': 'Open Google Feed Price Check ↗',
       'prod2.name': 'OneFlow (Jarvis)',
       'prod2.status': 'Self-built',
       'prod2.tag': 'A Jarvis-style AI butler driven by a single instruction.',
@@ -902,14 +813,6 @@ body.menu-open .nav-toggle svg:last-child{ display:block }
       'prod3.status': 'In exploration',
       'prod3.tag': 'New products will show up here first.',
       'prod3.desc': 'Our AI workforce is still finding problems worth solving — we design, build, and ship everything ourselves, and new products will show up here first.',
-      'prodsr.name': 'Shelf Reset',
-      'prodsr.status': 'Live',
-      'prodsr.tag': 'Turn your POS export into a shelf plan your staff can follow',
-      'prodsr.desc': 'For independent retailers in English-speaking markets (grocery, liquor, pet, hardware, specialty food): drop in your point-of-sale sales export and get a one-page plan for a single 6-level shelf — which SKUs go on which level and how many facings each one gets — printable for staff to execute. Built for seasonal resets, promotions and new-store setups. Your file is processed in your browser and never uploaded; one shelf free.',
-      'prodsr.h1': 'Ranks by units sold, so best-sellers land at eye level',
-      'prodsr.h2': 'Prints or saves to PDF, and exports CSV',
-      'prodsr.h3': 'Runs entirely in your browser — nothing is uploaded',
-      'prodsr.cta': 'Open Shelf Reset ↗',
       'contact.title': 'Get in touch',
       'contact.desc': 'Have a product question or an idea to share? Email us.',
       'contact.mailHint': 'Email us directly'
